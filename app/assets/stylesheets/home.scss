@@ -1,0 +1,18 @@
+.boards__linkBoxtable {
+  tr:hover {
+    cursor: pointer;
+  }
+}
+
+.boards__linkBox {
+  a {
+    margin: 0 8px;
+  }
+}
+
+.navbar-brand {
+  background: url("logo.png") no-repeat left center;
+  background-size: contain;
+  height: 50px;
+  width: 250px;
+}
