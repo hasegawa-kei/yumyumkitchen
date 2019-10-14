@@ -1,0 +1,6 @@
+- flash.each do |key, value|
+  = content_tag(:div, value, class: "#{key}")
+
+= form_tag search_youtube_path do
+  = text_field_tag :search_word, @search_word
+  = submit_tag "search"

@@ -33,7 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '>= 4.3.1'
 gem 'mini_racer'
-gem 'google-api-client', '~> 0.11'
+gem 'google-api-client', '~> 0.11', require: 'google/apis/youtube_v3'
+gem 'trollop', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
