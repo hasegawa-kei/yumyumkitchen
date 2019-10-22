@@ -36,6 +36,8 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'font-awesome-sass', '~> 5.4.1'
+gem 'devise'
+gem 'devise-bootstrap-views'
 
 gem 'mini_racer'
 gem 'google-api-client', '~> 0.11', require: 'google/apis/youtube_v3'
@@ -56,6 +58,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
   gem 'annotate'
+  gem 'html2slim'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

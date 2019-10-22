@@ -8,6 +8,23 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
+
     = render 'header'
+    - if notice
+      .alert.alert-info.alert-dismissible[role="alert"]
+        button.close[type="button" data-dismiss="alert"]
+          span[aria-hidden="true"]
+          | ×
+          span.sr-only
+          | close
+        = notice
+    - if alert
+      .alert.alert-danger.alert-dismissible[role="alert"]
+        button.close[type="button" data-dismiss="alert"]
+          span[aria-hidden="true"]
+          | ×
+          span.sr-only
+          | close
+        = alert
     .container
       = yield
