@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'mypage', to: 'users#show'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   resources :recipes
   resources :users, only: %i[new create]
+  resources :comments, only: %i[create destroy]
 
 end

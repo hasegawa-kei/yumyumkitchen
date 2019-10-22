@@ -1,0 +1,25 @@
+.d-flex.align-items-center
+  h1
+    | 掲示板一覧
+  .ml-auto.boards__linkBox
+    = form_tag recipes_path, method: :get, class: 'recipes__searchForm' do
+      = select_tag :tag_id,
+        options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+        { prompt: 'タグで絞り込み', class: 'form-control recipes__select', onchange: 'submit(this.form);'}
+
+  a.btn.btn-outline-dark[href= new_recipe_path ]
+    | 新規作成
+
+- if flash[:notice]
+  .alert.alert-danger
+    = flash[:notice]
+.row
+  - @recipes.each do |recipe|
+    .card.col-md-4
+      .card-body
+        p.card-text
+        = link_to recipe.title, recipe 
+        = image_tag recipe.picture.thumb.url, id: :picture_prev if recipe.picture.present?
+
+
+= paginate @recipes

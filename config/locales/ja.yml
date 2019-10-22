@@ -6,7 +6,7 @@ ja:
         name: ユーザー名
         password: パスワード
         password_confirmation: パスワード（確認）
-      board:
+      recipe:
         name: 名前
         title: タイトル
         body: 本文

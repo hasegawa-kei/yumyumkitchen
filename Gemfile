@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '5.2.3'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
@@ -32,6 +32,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '>= 4.3.1'
+gem 'kaminari'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'font-awesome-sass', '~> 5.4.1'
+
 gem 'mini_racer'
 gem 'google-api-client', '~> 0.11', require: 'google/apis/youtube_v3'
 gem 'trollop', '~> 1.2'
@@ -39,6 +44,7 @@ gem 'trollop', '~> 1.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rails-flog', require: 'flog'
 end
 
 group :development do
@@ -49,6 +55,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

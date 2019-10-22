@@ -1,21 +1,7 @@
 .d-flex.align-items-center
   h1
-    | 掲示板作成
+    | レシピを投稿する
   .ml-auto.boards__linkBox
-    a.btn.btn-outline-dark[href="/"]
-      | 掲示板一覧
+    =link_to 'レシピ一覧', recipes_path, class: 'btn btn-outline-dark'
 
-= form_for @recipe do |f|
-  div.form-group
-    = f.label :name, '名前'
-    = f.text_field :name, class: 'form-control'
-
-  .form-group
-    = f.label :title, 'タイトル'
-    = f.text_field :title, class: 'form-control'
-
-  .form-group
-    = f.label :body, '本文'
-    = f.text_area :body, class: 'form-control', rows: 10
-
-  = f.submit '保存', class: 'btn btn-primary'
+= render partial: 'form', locals: { recipe: @recipe }

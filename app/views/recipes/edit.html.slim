@@ -1,0 +1,7 @@
+.d-flex.align-items-center
+  h1
+    | 掲示板編集
+  .ml-auto.boards__linkBox
+    =link_to 'レシピ一覧', recipes_path, class: 'btn btn-outline-dark'
+
+= render partial: 'form', locals: { recipe: @recipe }

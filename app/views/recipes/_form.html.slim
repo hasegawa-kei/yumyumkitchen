@@ -1,0 +1,34 @@
+= render 'shared/error_messages'
+
+= form_for recipe do |f|
+  .form-group
+    = f.label :title, '料理名'
+    = f.text_field :title, class: 'form-control'
+
+  .form-group
+    = f.label :picture, 'タイトル画像'
+
+    #img_field[onclick="$('#file').click()"]
+      // 画像があるときは画像を表示する
+      - if @recipe.picture.present?
+        = image_tag(@recipe.picture.thumb.url)
+      - else
+        i.fas.fa-image
+        i.fas.fa-file-upload.add
+    = f.file_field :picture, class: "image", style: "display:none;", id: "file"
+
+
+  .form-group
+    = f.label :body, '作り方'
+    = f.text_area :body, class: 'form-control', rows: 10
+
+  .form-group
+    span
+      | タグ
+    = f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag|
+      .form-check
+        = tag.label class: 'form-check-label' do
+          = tag.check_box class: 'form-check-input'
+          = tag.text
+
+  = f.submit '保存', class: 'btn btn-primary'

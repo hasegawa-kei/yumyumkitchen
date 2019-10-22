@@ -13,6 +13,6 @@ module Yumyumkitchen
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :ja # デフォルトのlocaleを日本語(:ja)にする
     #config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]　#日本語対応
-
+    config.time_zone = 'Tokyo'
   end
 end
