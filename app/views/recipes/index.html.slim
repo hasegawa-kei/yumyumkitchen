@@ -10,16 +10,27 @@
   a.btn.btn-outline-dark[href= new_recipe_path ]
     | 新規作成
 
-- if flash[:notice]
-  .alert.alert-danger
-    = flash[:notice]
 .row
   - @recipes.each do |recipe|
     .card.col-md-4
       .card-body
         p.card-text
-        = link_to recipe.title, recipe 
-        = image_tag recipe.picture.thumb.url, id: :picture_prev if recipe.picture.present?
+        = link_to recipe.title, recipe
+
+        - if recipe.picture.present?
+          = image_tag recipe.picture.thumb.url, id: :picture_prev
+
+        - if current_user.likes.find_by(recipe_id: recipe.id)
+          = link_to recipe_like_path(recipe,recipe), method: :delete do
+            span.fa.fa-heart.like-btn-unlike
+          end
+        - else
+          = link_to recipe_likes_path(recipe), method: :post do
+            span.fa.fa-heart.like-btn
+          end
+        = button_to '削除', recipe, method: :delete, class: 'btn btn-outline-dark'
+
+
 
 
 = paginate @recipes

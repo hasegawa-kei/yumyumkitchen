@@ -19,8 +19,29 @@
 
 
   .form-group
-    = f.label :body, '作り方'
-    = f.text_area :body, class: 'form-control', rows: 10
+    .row
+      .col-md-12
+        = f.label :body, '作り方'
+        .diary-editor-wrapper
+        = f.text_area :body, class: 'form-control',required: true, placeholder: '', data: { provider: 'summernote' }
+        javascript:
+          $(function () {
+            $('[data-provider="summernote"]').each(function(){
+              $(this).summernote({
+                lang: 'ja-JP',
+                height: 1000,
+                fontNames: ['Helvetica', 'sans-serif', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+                fontNamesIgnoreCheck: ['Helvetica', 'sans-serif', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+                toolbar: [
+                  ['style', ['bold', 'italic', 'underline', 'clear']],
+                  ['fontsize', ['fontsize']],
+                  ['insert', ['picture', 'video']],
+                  ['para', ['ul', 'ol']],
+                ]
+              });
+            })
+          })
+
 
   .form-group
     span
@@ -30,5 +51,6 @@
         = tag.label class: 'form-check-label' do
           = tag.check_box class: 'form-check-input'
           = tag.text
+
 
   = f.submit '保存', class: 'btn btn-primary'

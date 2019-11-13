@@ -15,9 +15,32 @@
 
 
 @import "bootstrap";
+@import "summernote-bs4";
 @import "base";
 @import "home";
 @import "comments";
 @import "recipes";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+// エディターの幅調整
+.note-editor{
+  width: 100%;
+}
+
+// ログイン画面
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
+// 「ログインしました」などのフラッシュ用スタイル
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}

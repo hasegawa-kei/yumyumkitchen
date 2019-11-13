@@ -1,12 +1,14 @@
 class RecipesController < ApplicationController
   before_action :set_target_recipe, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+
 
   def new
     @recipe = Recipe.new
   end
 
   def create
-    recipe = Recipe.create(recipe_params)
+    recipe = current_user.recipes.create(recipe_params)
     if recipe.save
       flash[:notice] = "「#{recipe.title}」を作成しました。"
       redirect_to recipe
@@ -19,12 +21,14 @@ class RecipesController < ApplicationController
   end
 
   def index
+
     @recipes = params[:tag_id].present? ? Tag.find(params[:tag_id]).recipes : Recipe.all
     @recipes = @recipes.page(params[:page])
   end
 
   def show
     @comment = Comment.new(recipe_id: @recipe.id)
+    @like = Like.new
   end
 
   def edit
@@ -54,4 +58,5 @@ class RecipesController < ApplicationController
   def set_target_recipe
     @recipe = Recipe.find(params[:id])
   end
+
 end

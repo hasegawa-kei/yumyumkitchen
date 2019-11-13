@@ -11,10 +11,17 @@
 // about supported directives.
 //
 //= require jquery3
+//= require popper
+//= require bootstrap
 //= require bootstrap-sprockets
+//= require summernote/summernote-bs4.min
 //= require jquery_ujs
-//= require turbolinks
+//= require activestorage
 //= require_tree .
+
+
+
+
 $(function(){
   $fileField = $('#file')
 

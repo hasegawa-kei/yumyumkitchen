@@ -21,7 +21,7 @@ gem 'html2slim'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+#gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -38,6 +38,7 @@ gem 'rmagick'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'summernote-rails', '~> 0.8.10.0'
 
 gem 'mini_racer'
 gem 'google-api-client', '~> 0.11', require: 'google/apis/youtube_v3'
