@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+  get 'comments/destroy'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -17,8 +19,9 @@ Rails.application.routes.draw do
   #post '/login',   to: 'sessions#create'
   resources :recipes do
     resources :likes, only: %i[create destroy]
+    resources :comments, only: %i[create destroy]
   end
   #resources :users, only: %i[new create]
-  resources :comments, only: %i[create destroy]
+
 
 end

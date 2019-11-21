@@ -37,9 +37,32 @@
                   ['fontsize', ['fontsize']],
                   ['insert', ['picture', 'video']],
                   ['para', ['ul', 'ol']],
-                ]
+                ],
+                callbacks: {
+                  onPictureUpload: function(files, editor, welEditable) {
+                    sendFile(files[0], editor, welEditable);
+                  }
+                }
               });
             })
+            function sendFile(file, editor, welEditable) {
+              data = new FormData();
+              data.append('upload_image', file);
+              $.ajax({
+                url: '/post_image',
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function(data) {
+                  $('[data-provider="summernote"]').summernote('insertImage', data.url);
+                },
+                error: function() {
+                  alert('画像のアップロードに失敗しました');
+                }
+              });
+            }
           })
 
 

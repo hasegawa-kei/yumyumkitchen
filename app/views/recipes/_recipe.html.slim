@@ -1,9 +1,13 @@
-h4
-  = recipe.title
-  - recipe.tags.each do |tag|
-    span.badge.badge-primary
-      =tag.name
+.container
+  .page-title
+    h4
+      = recipe.title
+      - recipe.tags.each do |tag|
+        span.badge.badge-primary
+          =tag.name
 
-  .card-body
-    p.card-text
-      = simple_format(recipe.body)
+    .card-body
+      p.card-text
+        - if recipe.picture.present?
+          = image_tag recipe.picture.thumb.url, id: :picture_prev
+        = simple_format(recipe.body)

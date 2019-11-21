@@ -1,24 +1,26 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
-    comment = Comment.new(comment_params)
-    if comment.save
-      flash[:notice] = "コメントを投稿しました"
-      redirect_to comment.recipe
-    else
-      flash[:comment] = comment
-      flash[:error_messages] = comment.errors.full_messages
-      redirect_back fallback_location: comment.recipe
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = @recipe.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    if @comment.save
+      render :index
     end
   end
 
   def destroy
-    comment = Comment.find(params[:id])
-    comment.delete
-    redirect_to comment.recipe, flash: { notice: 'コメントが削除されました。'}
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      render :index
+    end
   end
 
   private
-  def comment_params
-    params.require(:comment).permit(:recipe_id, :name, :comment)
-  end
+
+    def comment_params
+      params.require(:comment).permit(:content, :recipe_id, :user_id)
+    end
+
 end

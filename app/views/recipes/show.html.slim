@@ -9,8 +9,8 @@
 .p-comment__list
   .p-comment__listTitle
     |コメント
-  = render @recipe.comments
+    #comments_area
+      = render partial: 'comments/index', locals: { comments: @comments }
 
-
-
-= render partial: 'comments/form', locals: { comment: @comment }
+- if user_signed_in?
+  = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }
