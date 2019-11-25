@@ -41,6 +41,8 @@ gem 'devise-bootstrap-views'
 gem 'summernote-rails', '~> 0.8.10.0'
 gem 'fog-aws'
 gem 'dotenv-rails'
+gem 'mini_magick'
+gem 'ckeditor', '4.3.0'
 
 gem 'mini_racer'
 gem 'google-api-client', '~> 0.11', require: 'google/apis/youtube_v3'

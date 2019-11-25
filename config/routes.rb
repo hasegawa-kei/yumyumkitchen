@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   get 'comments/create'
   get 'comments/destroy'
   devise_for :users, controllers: {

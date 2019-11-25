@@ -22,48 +22,7 @@
     .row
       .col-md-12
         = f.label :body, '作り方'
-        .diary-editor-wrapper
-        = f.text_area :body, class: 'form-control',required: true, placeholder: '', data: { provider: 'summernote' }
-        javascript:
-          $(function () {
-            $('[data-provider="summernote"]').each(function(){
-              $(this).summernote({
-                lang: 'ja-JP',
-                height: 1000,
-                fontNames: ['Helvetica', 'sans-serif', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
-                fontNamesIgnoreCheck: ['Helvetica', 'sans-serif', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
-                toolbar: [
-                  ['style', ['bold', 'italic', 'underline', 'clear']],
-                  ['fontsize', ['fontsize']],
-                  ['insert', ['picture', 'video']],
-                  ['para', ['ul', 'ol']],
-                ],
-                callbacks: {
-                  onPictureUpload: function(files, editor, welEditable) {
-                    sendFile(files[0], editor, welEditable);
-                  }
-                }
-              });
-            })
-            function sendFile(file, editor, welEditable) {
-              data = new FormData();
-              data.append('upload_image', file);
-              $.ajax({
-                url: '/post_image',
-                data: data,
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: 'POST',
-                success: function(data) {
-                  $('[data-provider="summernote"]').summernote('insertImage', data.url);
-                },
-                error: function() {
-                  alert('画像のアップロードに失敗しました');
-                }
-              });
-            }
-          })
+        = f.cktext_area :body, class: 'form-control'
 
 
   .form-group

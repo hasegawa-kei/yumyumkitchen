@@ -17,6 +17,7 @@
 //= require summernote/summernote-bs4.min
 //= require jquery_ujs
 //= require activestorage
+//= require ckeditor/init
 //= require_tree .
 
 
