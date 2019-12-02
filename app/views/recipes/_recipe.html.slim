@@ -1,6 +1,6 @@
 .container
   .page-title
-    h4
+    h1
       = recipe.title
       - recipe.tags.each do |tag|
         span.badge.badge-primary
@@ -9,5 +9,8 @@
     .card-body
       p.card-text
         - if recipe.picture.present?
-          = image_tag recipe.picture.thumb.url, id: :picture_prev
-        = simple_format(recipe.body)
+          = image_tag recipe.picture.to_s
+        .div
+          h1　
+            作り方
+          = simple_format(recipe.body)

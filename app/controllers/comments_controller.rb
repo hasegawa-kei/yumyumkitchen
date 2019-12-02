@@ -6,14 +6,14 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      render :index
+      render "index.js.slim"
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      render :index
+      render "index.js.slim"
     end
   end
 
