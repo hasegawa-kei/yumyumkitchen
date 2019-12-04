@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '5.2.3'
 
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -33,21 +33,19 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '>= 4.3.1'
 gem 'kaminari'
-gem 'carrierwave'
-gem 'rmagick'
+
+
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise'
 gem 'devise-bootstrap-views'
-gem 'summernote-rails', '~> 0.8.10.0'
-gem 'fog-aws'
+gem 'carrierwave'
 gem 'fog'
+gem 'rmagick'
+#gem 'fog'
 gem 'dotenv-rails'
-gem 'mini_magick'
-gem 'ckeditor', '4.3.0'
+#gem 'mini_magick'
+#gem 'ckeditor', '4.3.0'
 
-gem 'mini_racer'
-gem 'google-api-client', '~> 0.11', require: 'google/apis/youtube_v3'
-gem 'trollop', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
