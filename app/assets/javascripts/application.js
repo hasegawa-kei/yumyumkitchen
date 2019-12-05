@@ -14,7 +14,7 @@
 //= require popper
 //= require bootstrap
 //= require bootstrap-sprockets
-
+//= require ckeditor/init
 //= require jquery_ujs
 //= require activestorage
 //= require_tree .

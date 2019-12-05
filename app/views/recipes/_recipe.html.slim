@@ -8,7 +8,8 @@
 
     .card-body
       p.card-text
-      = image_tag recipe.picture.to_s, class: 'mypage-article-img'
+        - if recipe.picture.present?
+          = image_tag recipe.picture.thumb.to_s, class: 'mypage-article-img'
         .div
           h1　
             作り方

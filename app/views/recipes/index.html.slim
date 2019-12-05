@@ -17,8 +17,8 @@
         p.card-text
         = link_to recipe.title, recipe
 
-//        - if recipe.picture.present?
-//          = link_to image_tag recipe.picture.to_s
+        - if recipe.picture.present?
+          = link_to image_tag(recipe.picture.thumb.to_s,size: '300x250'), recipe
 
         - if current_user.likes.find_by(recipe_id: recipe.id)
           = link_to recipe_like_path(recipe,recipe), method: :delete do

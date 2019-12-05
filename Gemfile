@@ -41,10 +41,9 @@ gem 'devise-bootstrap-views'
 gem 'carrierwave'
 gem 'fog'
 gem 'rmagick'
-#gem 'fog'
 gem 'dotenv-rails'
-#gem 'mini_magick'
-#gem 'ckeditor', '4.3.0'
+gem 'mini_magick'
+gem 'ckeditor', '4.3.0'
 
 
 group :development, :test do

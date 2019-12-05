@@ -7,14 +7,21 @@
 
   .form-group
     = f.label :picture, 'タイトル画像'
-    = f.file_field :picture
+    #img_field[onclick="$('#file').click()"]
+      // 画像があるときは画像を表示する
+      - if @recipe.picture.present?
+        = image_tag(@recipe.picture.thumb.to_s)
+      - else
+        i.fas.fa-image
+        i.fas.fa-file-upload.add
+    = f.file_field :picture, class: "image", style: "display:none;", id: "file"
 
 
   .form-group
     .row
       .col-md-12
         = f.label :body, '作り方'
-        = f.text_area :body, class: 'form-control'
+        = f.cktext_area :body, class: 'form-control'
 
 
   .form-group
