@@ -12,5 +12,5 @@
     #comments_area
       = render partial: 'comments/index', locals: { comments: @comments }
 
-- if user_signed_in?
-  = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }
+    - if user_signed_in?
+      = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }

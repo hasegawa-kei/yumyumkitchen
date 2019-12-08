@@ -1,5 +1,6 @@
 p.text-secondary.mt-4 −　または　−
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = f.hidden_field :name, value: 'テストユーザー'
   = f.hidden_field :email, value: 'testuser@12345.com'
   = f.hidden_field :password, value: 'test12345'
   = button_tag 'テストユーザーでログイン', class: 'btn btn-outline-success btn-block'

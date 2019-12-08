@@ -6,14 +6,14 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      render "index.js.slim"
+      redirect_to "/recipes/#{@recipe.id}"
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      render "index.js.slim"
+      render 'js_comment.js.erb'
     end
   end
 

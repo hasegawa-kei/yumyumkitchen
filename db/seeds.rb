@@ -15,4 +15,7 @@
     { name: '中華'}
     ])
 
+
+  user = User.new(name: 'テストユーザー', email: 'testuser@12345.com', password: 'test12345')
+  user.save!
   

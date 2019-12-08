@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @comment = Comment.new(recipe_id: @recipe.id)
+    @comment = Comment.new
     @comments = @recipe.comments
     @like = Like.new
   end
