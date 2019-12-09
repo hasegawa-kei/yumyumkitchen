@@ -6,6 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module Yumyumkitchen
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -15,7 +16,6 @@ module Yumyumkitchen
     #config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]　#日本語対応
     config.time_zone = 'Tokyo'
     config.assets.precompile += Ckeditor.assets
-    config.assets.precompile += %w( ckeditor/* )
-    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
   end
 end
