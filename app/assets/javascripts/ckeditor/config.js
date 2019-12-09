@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function(config) {
   config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
   config.filebrowserImageUploadUrl = "/ckeditor/pictures";
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
-  config.filebrowserImageUploadUrl = "/ckeditor/pictures?=true"
+  config.filebrowserImageUploadUrl = "/ckeditor/pictures?=true";
   config.filebrowserUploadMethod = 'form';
   config.toolbar_Pure = [
     '/', {
