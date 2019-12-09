@@ -15,19 +15,15 @@
     .card.col-md-4
       .card-body
         p.card-text
-        = link_to recipe.title, recipe
+          = link_to recipe.title, recipe
 
-        - if recipe.picture.present?
-          = link_to image_tag(recipe.picture.thumb.to_s,size: '300x250'), recipe
-
-        - if current_user.likes.find_by(recipe_id: recipe.id)
-          = link_to recipe_like_path(recipe,recipe), method: :delete do
-            span.fa.fa-heart.like-btn-unlike
-          end
-        - else
-          = link_to recipe_likes_path(recipe), method: :post do
-            span.fa.fa-heart.like-btn
-          end
+        .recipe_title_image
+          - if recipe.picture.present?
+            = link_to image_tag(recipe.picture.thumb.to_s,size: '300x250'), recipe
+        .good.good-mark
+          | いいね数 :
+        .good.good-counts
+          = recipe.liked_users.count
         - if recipe.user == current_user
           = button_to '削除', recipe, method: :delete, class: 'btn btn-outline-dark'
 

@@ -1,3 +1,46 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.p-comment__listTitle　{
+  p {
+    border-bottom: 2px solid #dfdfdf;
+  }
+}
+
+.comment__formBox {
+  margin: 30px auto;
+  border: 5px solid #61b3fa;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+
+.comment__formTitle {
+  border-bottom: 2px solid #dfdfdf;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.comment_user {
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.comment_item {
+  margin: 30px auto;
+  border: 2px solid #e8e8e8;
+  padding: 25px;
+  border-radius: 14px;
+  width: 100%;
+}
+
+.comment-body {
+  padding: 25px;
+  border: 2px solid #e8e8e8;
+  border-radius: 14px;
+}
+
+.comment_delete_btn {
+  margin-top: 5px;
+}

@@ -1,10 +1,10 @@
-- comments.each do |comment|
-  - unless comment.id.nil?
-    p
-      = link_to "#{comment.user.name}さん"
-    p
-      | コメント：
-      = comment.content
-    - if comment.user == current_user
-      p
-        = link_to 'コメントを削除する', recipe_comment_path(comment.recipe_id, comment.id), method: :delete, remote: true
+  - comments.each do |comment|
+    .comment_item
+      - unless comment.id.nil?
+      .comment_user
+        = "#{comment.user.name}さん"
+      .comment-body
+        = simple_format(comment.content)
+      .comment_delete_btn
+        - if comment.user == current_user
+          = link_to '削除', recipe_comment_path(comment.recipe_id, comment.id), method: :delete, remote: true, class: 'btn btn-outline-secondary'

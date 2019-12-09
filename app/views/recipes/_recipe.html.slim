@@ -2,15 +2,25 @@
   .page-title
     h1
       = recipe.title
-      - recipe.tags.each do |tag|
-        span.badge.badge-primary
-          =tag.name
+  .recipe-header
+    .recipe_title_image
+      - if recipe.picture.present?
+        = image_tag recipe.picture.thumb.to_s, class: 'mypage-article-img'
 
-    .card-body
-      p.card-text
-        - if recipe.picture.present?
-          = image_tag recipe.picture.thumb.to_s, class: 'mypage-article-img'
-        .div
-          h1　
-            作り方
-          = simple_format(recipe.body)
+    - recipe.tags.each do |tag|
+      .tag_icon.badge.badge-primary
+        =tag.name
+    .good.good-mark
+      - if current_user.already_liked?(@recipe)
+        = link_to recipe_like_path(recipe), method: :delete do
+          span.fa.fa-heart.like-btn-unlike
+      - else
+        = link_to recipe_likes_path(recipe), method: :post do
+          span.fa.fa-heart.like-btn
+    .good.good-counts
+        = recipe.liked_users.count
+
+
+  .h1.card-body　
+    作り方
+  = simple_format(recipe.body)

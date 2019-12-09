@@ -15,6 +15,19 @@
   float: left;
 }
 
+.container {
+
+}
+
+.recipe-header {
+  border-bottom: solid 3px #a8a8a8;
+  padding-bottom: 15px;
+}
+
+.recipe_title_image {
+  margin-bottom: 15px;
+}
+
 #img_field {
   font-size: 15px;
   margin-top: 10px;
@@ -76,4 +89,14 @@
 
 .like-btn-unlike {
   color: #ff2581;
+}
+
+.good {
+  float: left;
+  margin: 3px;
+}
+
+.tag_icon {
+  margin: 3px;
+  font-size: 15px;
 }
