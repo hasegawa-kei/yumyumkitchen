@@ -1,0 +1,9 @@
+.container.text-center
+  .page-title
+    = @user.name
+  .div
+    = image_tag @user.avatar.to_s,size: '300x250'
+
+  - if current_user && current_user.id == @user.id
+    .user-edit-link
+      = link_to '編集する', edit_user_registration_path

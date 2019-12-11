@@ -10,7 +10,7 @@ nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.mt-3.mb-3
       - if user_signed_in?
 
         li.nav-item
-         = link_to 'マイページ', "#", class: 'nav-link'
+         = link_to 'マイページ', user_path(current_user), class: 'nav-link'
 
         li.nav-item
           = link_to 'レシピを投稿する', new_recipe_path, class: 'nav-link'

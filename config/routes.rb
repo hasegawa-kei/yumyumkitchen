@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
+
   mount Ckeditor::Engine => '/ckeditor'
   #get 'comments/create'
   #get 'comments/destroy'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
   }
-
+  resources :users, only: %i[show]
   #get 'mypage', to: 'users#show'
   #post 'login', to: 'sessions#create'
   #delete 'logout', to: 'sessions#destroy'

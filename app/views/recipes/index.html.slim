@@ -1,6 +1,8 @@
+- provide(:title, "みんなの料理")
+
 .d-flex.align-items-center
   h1
-    | 掲示板一覧
+    | みんなの料理
   .ml-auto.boards__linkBox
     = form_tag recipes_path, method: :get, class: 'recipes__searchForm' do
       = select_tag :tag_id,
