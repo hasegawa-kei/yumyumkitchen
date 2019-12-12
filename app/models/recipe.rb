@@ -19,6 +19,8 @@ class Recipe < ApplicationRecord
   has_many :tags, through: :recipe_tag_relations
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
+  has_many :procedures, dependent: :destroy
+  accepts_nested_attributes_for :procedures, allow_destroy: true
   belongs_to :user
 
   validates :title, presence: true, length: { maximum: 20 }

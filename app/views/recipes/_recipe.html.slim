@@ -23,4 +23,8 @@
 
   .h1.card-body　
     作り方
+  - recipe.procedures.each do |procedure|
+    = image_tag procedure.image.to_s
+    = procedure.content
+
   = simple_format(recipe.body)

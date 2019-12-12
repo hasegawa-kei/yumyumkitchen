@@ -6,6 +6,13 @@
       .card-body
         h1
           | プロフィールの編集
+
+
+        - if @user.avatar.present?
+          p
+            | 現在のプロフィール画像
+          = image_tag(@user.avatar.thumb.to_s)
+
         .div
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
           = render "devise/shared/error_messages", resource: resource
@@ -14,9 +21,12 @@
             = f.label :name
             = f.text_field :name, autosocus: true, autocomplete: "name", class: 'form-control'
 
-          = f.label :avatar, '画像'
-          = f.file_field :avatar, label: '画像', onchange: "previewFile()", input_html: { class: 'form-controll'}
-          img#preview[src="" height="200"]
+
+          .div
+            = f.label :avatar, 'プロフィール画像を設定、編集'
+            br
+            = f.file_field :avatar, label: '画像', onchange: "previewFile()", input_html: { class: 'form-controll'}
+            img#preview[src="" height="150"]
 
           .field
             = f.label :email

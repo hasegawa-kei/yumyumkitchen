@@ -16,12 +16,19 @@
         i.fas.fa-file-upload.add
     = f.file_field :picture, class: "image", style: "display:none;", id: "file"
 
+  .div
+    = f.nested_fields_for :procedures do |q|
+        = q.file_field :image, label: '画像', onchange: "previewFile()", input_html: { class: 'form-controll'}
+        img#preview[src="" height="100"]
+        = q.text_field :content, class: 'form-control'
+        = q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button'
+  = f.add_nested_fields_link :procedures, '作り方の追加', class: 'btn btn-primary', role: 'button'
 
   .form-group
     .row
       .col-md-12
-        = f.label :body, '作り方'
-        = f.cktext_area :body, class: 'form-control'
+        = f.label :body, 'コツやポイント'
+        = f.text_area :body, class: 'form-control'
 
 
   .form-group
@@ -35,3 +42,19 @@
 
 
   = f.submit '保存', class: 'btn btn-primary'
+
+
+javascript:
+  function previewFile() {
+        var preview = document.querySelector('#preview');
+        var file    = document.querySelector('input[type=file]').files[0];
+        var reader  = new FileReader();
+
+        reader.addEventListener("load", function () {
+          preview.src = reader.result;
+        }, false);
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }

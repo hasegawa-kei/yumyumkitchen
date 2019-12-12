@@ -53,7 +53,9 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :picture, :body, tag_ids: [])
+    params.require(:recipe).permit(:title, :picture, :body, tag_ids: [],
+        procedures_attributes: [:id, :recipe_id, :image, :content, :_destroy]
+      )
   end
 
   def set_target_recipe
