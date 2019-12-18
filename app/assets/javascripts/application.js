@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require ckeditor/init
 //= require nested_form_fields
+//= require cocoon
 //= require jquery_ujs
 //= require activestorage
 //= require_tree .

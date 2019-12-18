@@ -46,6 +46,8 @@ gem 'mini_magick'
 gem 'ckeditor', '4.3.0'
 
 gem 'nested_form_fields'
+gem "cocoon"
+gem 'simple_form'
 
 
 group :development, :test do

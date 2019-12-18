@@ -1,30 +1,57 @@
+- provide(:title, recipe.title)
+
 .container
-  .page-title
-    h1
-      = recipe.title
-  .recipe-header
-    .recipe_title_image
-      - if recipe.picture.present?
-        = image_tag recipe.picture.thumb.to_s, class: 'mypage-article-img'
+  .row
+    .col-sm-10.col-md-8.col-lg-10.mx-auto
+      .recipe-page
+        .page-title
+          h1
+            = recipe.title
+        .recipe-header
+          .recipe_title_image
+            - if recipe.picture.present?
+              = image_tag recipe.picture.thumb.to_s, class: 'mypage-article-img'
 
-    - recipe.tags.each do |tag|
-      .tag_icon.badge.badge-primary
-        =tag.name
-    .good.good-mark
-      - if current_user.already_liked?(@recipe)
-        = link_to recipe_like_path(recipe), method: :delete do
-          span.fa.fa-heart.like-btn-unlike
-      - else
-        = link_to recipe_likes_path(recipe), method: :post do
-          span.fa.fa-heart.like-btn
-    .good.good-counts
-        = recipe.liked_users.count
+          .recipe-header-item
+            - if current_user.already_liked?(@recipe)
+              = link_to recipe_like_path(recipe), method: :delete do
+                .btn.btn-warning
+                  |  いいね　
+                  = recipe.liked_users.count
+            - else
+              = link_to recipe_likes_path(recipe), method: :post do
+                .btn.btn-outline-warning
+                  |  いいね　
+                  = recipe.liked_users.count
+
+          .recipe-header-item
+            - recipe.tags.each do |tag|
+              .tag_icon.badge.badge-primary
+                =tag.name
+        .recipe-body.clearfix
+          h1
+            | 作り方
+          .recipe-card
+            - recipe.procedures.each.with_index(1) do |procedure, i|
+              .card.recipe-precedences[style="width: 270px;"]
+                .recipe-index
+                  p
+                    | 手順
+                    = i
+                - if procedure.image.present?
+                   img.card-img-top
+                    = image_tag procedure.image.to_s,size: '268x170'
+
+                .recipe-card-body
+                      = simple_format(procedure.content)
 
 
-  .h1.card-body　
-    作り方
-  - recipe.procedures.each do |procedure|
-    = image_tag procedure.image.to_s
-    = procedure.content
-
-  = simple_format(recipe.body)
+        .comment__list
+          .comment__listTitle
+            h3
+              |コメント
+            #comments_area
+              = render partial: 'comments/index', locals: { comments: @comments }
+        - if user_signed_in?
+          .comment_form
+            = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }

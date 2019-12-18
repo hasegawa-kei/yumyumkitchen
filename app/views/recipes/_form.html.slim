@@ -1,6 +1,6 @@
 = render 'shared/error_messages'
 
-= form_for recipe do |f|
+= simple_form_for recipe do |f|
   .form-group
     = f.label :title, '料理名'
     = f.text_field :title, class: 'form-control'
@@ -10,19 +10,18 @@
     #img_field[onclick="$('#file').click()"]
       // 画像があるときは画像を表示する
       - if @recipe.picture.present?
-        = image_tag(@recipe.picture.thumb.to_s)
+        = image_tag(@recipe.picture.to_s,size: '400x250')
       - else
         i.fas.fa-image
         i.fas.fa-file-upload.add
     = f.file_field :picture, class: "image", style: "display:none;", id: "file"
 
   .div
-    = f.nested_fields_for :procedures do |q|
-        = q.file_field :image, label: '画像', onchange: "previewFile()", input_html: { class: 'form-controll'}
-        img#preview[src="" height="100"]
-        = q.text_field :content, class: 'form-control'
-        = q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button'
-  = f.add_nested_fields_link :procedures, '作り方の追加', class: 'btn btn-primary', role: 'button'
+    .div
+      = f.simple_fields_for :procedures do |q|
+        = render "procedure_fields", f: q
+      .links
+        = link_to_add_association '作り方の追加', f, :procedures, class: 'btn btn-outline-primary'
 
   .form-group
     .row
@@ -45,16 +44,19 @@
 
 
 javascript:
-  function previewFile() {
-        var preview = document.querySelector('#preview');
-        var file    = document.querySelector('input[type=file]').files[0];
-        var reader  = new FileReader();
+  $(document).on('change', ':file', function() {
+    var input = $(this),
+    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.parent().parent().next(':text').val(label);
 
-        reader.addEventListener("load", function () {
-          preview.src = reader.result;
-        }, false);
-
-        if (file) {
-          reader.readAsDataURL(file);
+    var files = !!this.files ? this.files : [];
+    if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+    if (/^image/.test( files[0].type)){ // only image file
+        var reader = new FileReader(); // instance of the FileReader
+        reader.readAsDataURL(files[0]); // read the local file
+        reader.onloadend = function(){ // set image data as background of div
+            input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
         }
-      }
+    }
+  });

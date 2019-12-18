@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @procedure = @recipe.procedures.build
   end
 
   def create
@@ -54,7 +55,7 @@ class RecipesController < ApplicationController
   private
   def recipe_params
     params.require(:recipe).permit(:title, :picture, :body, tag_ids: [],
-        procedures_attributes: [:id, :recipe_id, :image, :content, :_destroy]
+        procedures_attributes: [:id, :recipe_id, :image, :image_cache, :content, :_destroy]
       )
   end
 

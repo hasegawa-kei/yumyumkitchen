@@ -4,14 +4,3 @@
     = link_to '編集', edit_recipe_path(@recipe), class: 'btn btn-outline-dark'
 
 = render @recipe
-
-
-.p-comment__list
-  .p-comment__listTitle
-    p
-      |コメント履歴
-    #comments_area
-      = render partial: 'comments/index', locals: { comments: @comments }
-- if user_signed_in?
-  .comment_form
-    = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }

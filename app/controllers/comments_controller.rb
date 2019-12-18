@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
+      flash[:notice] = "コメントしました♪"
       redirect_to "/recipes/#{@recipe.id}"
     end
   end

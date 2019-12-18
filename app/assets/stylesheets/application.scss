@@ -24,12 +24,10 @@
 @import "comments";
 
 // エディターの幅調整
-.note-editor{
-  width: 100%;
-}
+
 img {
 	max-width: 100%;
-	height: auto;
+
 }
 // ログイン画面
 
@@ -47,3 +45,18 @@ img {
 .alert-alert {
   @extend .alert-danger;
 }
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
