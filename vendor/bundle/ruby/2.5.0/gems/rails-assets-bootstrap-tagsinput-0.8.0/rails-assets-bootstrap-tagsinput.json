@@ -1,0 +1,39 @@
+{
+  "name": "rails-assets-bootstrap-tagsinput",
+  "downloads": null,
+  "version": "0.8.0",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "jQuery plugin providing a Twitter Bootstrap user interface for managing tags.",
+  
+  "licenses": "MIT",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/TimSchlechter/bootstrap-tagsinput",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/TimSchlechter/bootstrap-tagsinput",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/TimSchlechter/bootstrap-tagsinput",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-jquery",
+      "requirements": "~> 2.1.1"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

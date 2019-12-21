@@ -1,4 +1,35 @@
 .nested-fields
-  = f.file_field :image, class: "photo_img"
-  = f.text_area :content, class: 'form-control'
-  = link_to_remove_association "削除", f,class: 'btn btn-outline-dark'
+  .uploader
+    = f.file_field :image, class: "photo_img"
+
+    img class="img_prev" src="" alt="Image preview"
+    = f.hidden_field :photo_cache, :value => f.object.image_cache
+    - if f.object.image.url.present?
+      = image_tag f.object.image.to_s
+    = link_to_remove_association "remove", f
+
+javascript:
+    $('img[src=""]').attr('src', '/assets/noimage.png');
+    var cs=document.getElementsByClassName("photo_img");
+    //csの中からIDの情報をループで取り出す
+    var idd ={};
+    for (var i=0; i< cs.length;i++){
+    idd= cs[i].getAttribute("id");
+    console.log(idd)
+    };
+    $(function() {
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            $('#'+idd+'').next().attr('src', e.target.result);
+          }
+          reader.readAsDataURL(input.files[0]);
+          var value = input.files[0].name ;
+              $('#'+idd+'').prev().text(value)
+            }
+          }
+          $('#'+idd+'').change(function(){
+            readURL(this);
+          });
+        });

@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :likes, only: %i[create destroy]
     resources :comments
-    resources :procedures
   end
   #resources :users, only: %i[new create]
 

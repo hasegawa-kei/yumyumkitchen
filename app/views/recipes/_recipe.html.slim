@@ -39,8 +39,8 @@
                     | 手順
                     = i
                 - if procedure.image.present?
-                   img.card-img-top
-                    = image_tag procedure.image.to_s,size: '268x170'
+                   .thumb.card-img-top
+                    = image_tag procedure.image.to_s
 
                 .recipe-card-body
                       = simple_format(procedure.content)

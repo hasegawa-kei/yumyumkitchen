@@ -1,6 +1,6 @@
 = render 'shared/error_messages'
 
-= simple_form_for recipe do |f|
+= form_for recipe do |f|
   .form-group
     = f.label :title, '料理名'
     = f.text_field :title, class: 'form-control'
@@ -16,12 +16,11 @@
         i.fas.fa-file-upload.add
     = f.file_field :picture, class: "image", style: "display:none;", id: "file"
 
-  .div
-    .div
-      = f.simple_fields_for :procedures do |q|
-        = render "procedure_fields", f: q
-      .links
-        = link_to_add_association '作り方の追加', f, :procedures, class: 'btn btn-outline-primary'
+    .form-grouo
+        = f.fields_for :procedures do |q|
+          = render "procedure_fields", f: q
+    .links
+          = link_to_add_association '作り方の追加', f, :procedures, class: 'btn btn-outline-primary'
 
   .form-group
     .row
@@ -41,22 +40,3 @@
 
 
   = f.submit '保存', class: 'btn btn-primary'
-
-
-javascript:
-  $(document).on('change', ':file', function() {
-    var input = $(this),
-    numFiles = input.get(0).files ? input.get(0).files.length : 1,
-    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-    input.parent().parent().next(':text').val(label);
-
-    var files = !!this.files ? this.files : [];
-    if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-    if (/^image/.test( files[0].type)){ // only image file
-        var reader = new FileReader(); // instance of the FileReader
-        reader.readAsDataURL(files[0]); // read the local file
-        reader.onloadend = function(){ // set image data as background of div
-            input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
-        }
-    }
-  });
