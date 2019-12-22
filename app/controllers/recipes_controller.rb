@@ -9,14 +9,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = current_user.recipes.create(recipe_params)
-    if recipe.save
-      flash[:notice] = "「#{recipe.title}」を作成しました。"
-      redirect_to recipe
+    @recipe = current_user.recipes.build(recipe_params)
+    if @recipe.save
+      flash[:notice] = "「#{@recipe.title}」を作成しました。"
+      redirect_to @recipe
     else
-      flash[:recipe] = recipe
-      flash[:error_messages] = recipe.errors.full_messages
-      redirect_back(fallback_location: recipe)
+      flash[:recipe] = @recipe
+      flash[:error_messages] = @recipe.errors.full_messages
+      render 'new'
     end
 
   end
@@ -52,6 +52,8 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, flash: { notice: "「#{@recipe.title}」が削除されました。"}
   end
 
+  
+
   private
   def recipe_params
     params.require(:recipe).permit(:title, :picture, :body, tag_ids: [],
@@ -62,5 +64,7 @@ class RecipesController < ApplicationController
   def set_target_recipe
     @recipe = Recipe.find(params[:id])
   end
+
+
 
 end

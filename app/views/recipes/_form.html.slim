@@ -1,12 +1,14 @@
 = render 'shared/error_messages'
 
-= form_for recipe do |f|
-  .form-group
-    = f.label :title, '料理名'
+= form_for @recipe do |f|
+  .page-title
+    h1
+     | 料理名
     = f.text_field :title, class: 'form-control'
 
-  .form-group
-    = f.label :picture, 'タイトル画像'
+  .form-group.recipe-body
+    h1
+     | サムネイル画像
     #img_field[onclick="$('#file').click()"]
       // 画像があるときは画像を表示する
       - if @recipe.picture.present?
@@ -16,16 +18,19 @@
         i.fas.fa-file-upload.add
     = f.file_field :picture, class: "image", style: "display:none;", id: "file"
 
-    .form-grouo
-        = f.fields_for :procedures do |q|
-          = render "procedure_fields", f: q
+    .form-group.recipe-body
+      h1
+        | 手順
+      = f.fields_for :procedures do |q|
+        = render "procedure_fields", f: q
     .links
-          = link_to_add_association '作り方の追加', f, :procedures, class: 'btn btn-outline-primary'
+          = link_to_add_association '追加', f, :procedures, class: 'btn btn-outline-primary'
 
-  .form-group
+  .form-group.recipe-body
     .row
       .col-md-12
-        = f.label :body, 'コツやポイント'
+        h1
+         | コツやポイント
         = f.text_area :body, class: 'form-control'
 
 

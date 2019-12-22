@@ -5,6 +5,7 @@
   display: inline-block;
 }
 
+
 .recipes__select {
   display: inline-block;
   width: auto;
@@ -169,16 +170,24 @@
   margin-bottom: 40px;
 }
 
-.thumb{
-  img{
-    width: 268px;
-    height: 170px;
-  }
+.procedures-fields {
+  border: 1px solid #ffa13d;
+  padding: 6px
 }
 
-.user-photo-form{
-    td{
-        width: 300px;
-        padding: 10px 20px 10px 20px;
-    }
+.img_prev {
+  width: 200px;
+  height: 150px;
+}
+
+.procedures-preview {
+  margin-bottom: 5px;
+}
+
+.procedures-remove {
+  margin-top: 5px;
+  float: right;
+}
+.links {
+  margin-top: -30px;
 }
