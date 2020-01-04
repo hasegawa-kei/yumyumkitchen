@@ -18,12 +18,27 @@
         i.fas.fa-file-upload.add
     = f.file_field :picture, class: "image", style: "display:none;", id: "file"
 
-    .form-group.recipe-body
+    .form
+      h1
+        | 材料
+      table
+        thead
+          tr
+            th 品名
+            th 数量
+            th
+          tbody
+            = f.fields_for :materials do |q|
+              = render "material_fields", f: q
+    .material-links
+        = link_to_add_association '材料の追加', f, :materials, class: 'btn btn-outline-primary'
+
+    .form-group.recipe-bod
       h1
         | 手順
       = f.fields_for :procedures do |q|
         = render "procedure_fields", f: q
-    .links
+    .procedure-links
           = link_to_add_association '追加', f, :procedures, class: 'btn btn-outline-primary'
 
   .form-group.recipe-body

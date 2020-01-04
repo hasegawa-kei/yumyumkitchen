@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   #get '/login',    to: 'sessions#new'
   #post '/login',   to: 'sessions#create'
   resources :recipes do
-    resources :likes, only: %i[create destroy]
     resources :comments
+    resources :likes, only: %i[create destroy]
   end
   #resources :users, only: %i[new create]
 

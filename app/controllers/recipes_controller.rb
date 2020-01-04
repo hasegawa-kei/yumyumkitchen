@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @procedure = @recipe.procedures.build
+    @material = @recipe.materials.build
   end
 
   def create
@@ -24,6 +25,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = params[:tag_id].present? ? Tag.find(params[:tag_id]).recipes : Recipe.all
     @recipes = @recipes.page(params[:page])
+    @like = Like.new
     @like_count = Like.where(recipe_id: params[:recipe_id]).count
   end
 
@@ -52,12 +54,13 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, flash: { notice: "「#{@recipe.title}」が削除されました。"}
   end
 
-  
+
 
   private
   def recipe_params
     params.require(:recipe).permit(:title, :picture, :body, tag_ids: [],
-        procedures_attributes: [:id, :recipe_id, :image, :image_cache, :content, :_destroy]
+        procedures_attributes: [:id, :recipe_id, :image, :image_cache, :content, :_destroy],
+        materials_attributes: [:id, :recipe_id, :name, :quantity, :_destroy]
       )
   end
 

@@ -5,16 +5,18 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.build(comment_params)
     @comment.user_id = current_user.id
-    if @comment.save
-      flash[:notice] = "コメントしました♪"
-      redirect_to "/recipes/#{@recipe.id}"
+    respond_to do |format|
+      if @comment.save
+        format.html {redirect_to @recipe, notice: "コメントを投稿しました！"}
+        format.js
+      end
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      render 'js_comment.js.erb'
+      render :create
     end
   end
 

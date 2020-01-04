@@ -9,10 +9,17 @@ ja:
       recipe:
         name: 名前
         title: タイトル
-        body: 本文
+        body: コツやポイント
+        picture: トップ画像
       comment:
         name: 名前
         comment: コメント
+      recipe/materials:
+        name: 材料の品名
+        quantity: 材料の数量
+      recipe/procedures:
+        content: レシピの手順
+
   views:
     pagination:
       first: 最初

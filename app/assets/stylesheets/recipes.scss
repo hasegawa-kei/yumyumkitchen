@@ -16,10 +16,43 @@
   float: left;
 }
 
+.procedure {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 2px #ffc054;
+  border-radius:10px;
+}
+
+.index_box {
+  height:30px;
+  width:30px;
+  border-radius:5px;
+  line-height:30px;
+  text-align:center;
+  background:#b3b3b3;
+  font-size:18px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.recipe-procedure-content {
+  width: auto;
+  height: auto;
+  border: solid 1px #E0DCDC;
+  padding: 5px;
+  border-radius:5px;
+}
+
+.recipe-procedure-image {
+  margin-bottom: 10px;
+
+}
 
 
 .recipe-header {
-  height: 300px;
+  height: 350px;
 }
 
 .recipe_title_image {
@@ -118,30 +151,13 @@
   border-bottom: solid 3px orange;
   z-index:-2;
   }
+
 }
 
-.recipe-card {
-  width: 100%;
-  height: auto;
+.card-text {
+  font-size: 23px;
 }
 
-.recipe-precedences {
-  float: left;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  border: 1px solid black ;
-}
-
-.recipe-index {
-  height: 30px;
-  background-color: #ffefd6;
-  font-size: 16px;
-
-  p {
-    padding: 2px 10px 2px 15px
-
-  }
-}
 
 .recipe-card-body {
   padding: 10px 10px 0 20px;
@@ -167,7 +183,7 @@
 }
 
 .nested-fields {
-  margin-bottom: 40px;
+  margin-bottom: 4px;
 }
 
 .procedures-fields {
@@ -188,6 +204,19 @@
   margin-top: 5px;
   float: right;
 }
-.links {
-  margin-top: -30px;
+//material-formここから
+.material-name-box {
+  width: 500px;
+  height: auto;
 }
+
+.material-quantity-box {
+  width: 200px;
+  height: auto;
+}
+
+tr {
+  width: 600px;
+}
+
+//materialformここまで
