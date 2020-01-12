@@ -1,7 +1,8 @@
-.d-flex.align-items-center
-  h1
-    | レシピを投稿する
-  .ml-auto.boards__linkBox
-    =link_to 'レシピ一覧', recipes_path, class: 'btn btn-outline-dark'
+.container
+  .d-flex.align-items-center
+    h1
+      | レシピを投稿する
+    .ml-auto.boards__linkBox
+      =link_to 'レシピ一覧', recipes_path, class: 'btn btn-outline-dark'
 
-= render partial: 'form', locals: { recipe: @recipe }
+  = render partial: 'form', locals: { recipe: @recipe }

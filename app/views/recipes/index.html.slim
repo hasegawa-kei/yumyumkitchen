@@ -1,33 +1,35 @@
 - provide(:title, "みんなの料理")
+.container
+  .d-flex.align-items-center
+    h1
+      | みんなの料理
 
-.d-flex.align-items-center
-  h1
-    | みんなの料理
-  .ml-auto.boards__linkBox
-    = form_tag recipes_path, method: :get, class: 'recipes__searchForm' do
-      = select_tag :tag_id,
-        options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
-        { prompt: 'タグで絞り込み', class: 'form-control recipes__select', onchange: 'submit(this.form);'}
+  .recipe-search
+    h4.recipe-search-title
+     |　レシピを探す
+    .tag_search
+      |　◆タグで絞り込む
+      .tag_search_form
+        = form_tag recipes_path, method: :get, class: 'recipes__searchForm' do
+          = select_tag :tag_id,
+            options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+            { prompt: '選択して下さい', class: 'form-control recipes__select', onchange: 'submit(this.form);'}
+    .freeword_search
+      |　◆フリーワードで探す
+      = form_tag(recipes_path, method: 'get') do
+          = text_field_tag :search
+          = submit_tag '検索する', name: nil
 
-  a.btn.btn-outline-dark[href= new_recipe_path ]
-    | 新規作成
+  .row
+    - @recipes.each do |recipe|
+      .card.col-md-4
+        .card-body
+          .recipe_title_image
+            - if recipe.picture.present?
+              = link_to image_tag(recipe.picture.to_s,size: '300x250'), recipe
+            div(class="likes-#{recipe.id} like")
+              = render partial: 'likes/like', locals: { recipe: recipe}
+          p.card-text
+            = link_to recipe.title, recipe, style: "color:black;"
 
-.row
-  - @recipes.each do |recipe|
-    .card.col-md-4
-      .card-body
-        p.card-text
-          = link_to recipe.title, recipe, style: "color:black;"
-
-        .recipe_title_image
-          - if recipe.picture.present?
-            = link_to image_tag(recipe.picture.to_s,size: '300x250'), recipe
-          div(class="likes-#{recipe.id} like")
-            = render partial: 'likes/like', locals: { recipe: recipe}
-        - if recipe.user == current_user
-          = button_to '削除', recipe, method: :delete, class: 'btn btn-outline-dark'
-
-
-
-
-= paginate @recipes
+  = paginate @recipes

@@ -1,0 +1,22 @@
+.home-background
+  .home-container
+    .home-inside
+      p.home-title
+        | 「おいしい」を探そう♫
+      p.home-text
+        | 「晩御飯、何にしよう…」と、誰しも悩んだことがありますよね。
+      p.home-text
+          |　ヤムヤムキッチンでは、今日のレシピを探したり、
+      p.home-text
+          |　あなたのおすすめのレシピを投稿したり、
+      p.home-text
+          |　SNSでおすすめのレシピを共有することができます。
+      p.home-text
+        	|　さあ、「おいしい」を探しに行きましょう！
+    - if !user_signed_in?
+      p
+        | ログインはこちら👇
+      = link_to 'ログインする！', new_user_session_path
+      p
+        | 登録されていない方はこちら👇
+      = link_to 'ヤムヤムキッチンをはじめる！', new_user_registration_path

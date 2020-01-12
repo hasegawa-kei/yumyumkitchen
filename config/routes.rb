@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
 
-  mount Ckeditor::Engine => '/ckeditor'
   #get 'comments/create'
   #get 'comments/destroy'
 
@@ -16,8 +15,7 @@ Rails.application.routes.draw do
   #get '/youtube', to: 'youtube#index'
   #post '/search_youtube', to: 'youtube#search_youtube'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'homes#index'
-  get 'homes/about', to: 'homes#about'
+  root 'homes#top'
   #get '/login',    to: 'sessions#new'
   #post '/login',   to: 'sessions#create'
   resources :recipes do

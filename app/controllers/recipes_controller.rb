@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_target_recipe, only: %i[show edit update destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[index show]
+  PER = 9
 
 
   def new
@@ -24,7 +25,8 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = params[:tag_id].present? ? Tag.find(params[:tag_id]).recipes : Recipe.all
-    @recipes = @recipes.page(params[:page])
+    @recipes = @recipes.page(params[:page]).per(PER).search(params[:search])
+
     @like = Like.new
     @like_count = Like.where(recipe_id: params[:recipe_id]).count
   end
@@ -40,6 +42,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
+      flash[:notice] = "「#{@recipe.title}」を編集しました。"
       redirect_to @recipe
     else
       flash[:recipe] = @recipe
@@ -58,7 +61,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :picture, :body, tag_ids: [],
+    params.require(:recipe).permit(:title, :picture, :count, :body, tag_ids: [],
         procedures_attributes: [:id, :recipe_id, :image, :image_cache, :content, :_destroy],
         materials_attributes: [:id, :recipe_id, :name, :quantity, :_destroy]
       )

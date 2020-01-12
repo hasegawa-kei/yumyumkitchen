@@ -14,8 +14,7 @@
 //= require popper
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require ckeditor/init
-//= require nested_form_fields
+
 //= require cocoon
 
 //= require rails-ujs

@@ -4,7 +4,7 @@
   .page-title
     h1
      | 料理名
-    = f.text_field :title, class: 'form-control'
+    = f.text_field :title, class: 'form-control', placeholder: "料理名を入れよう！"
 
   .form-group.recipe-body
     h1
@@ -21,6 +21,7 @@
     .form
       h1
         | 材料
+      = f.number_field :count, placeholder: "何人分"
       table
         thead
           tr
@@ -46,7 +47,7 @@
       .col-md-12
         h1
          | コツやポイント
-        = f.text_area :body, class: 'form-control'
+        = f.text_area :body, class: 'form-control', placeholder: "作るときのコツやポイントをかこう！"
 
 
   .form-group

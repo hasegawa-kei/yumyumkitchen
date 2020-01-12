@@ -1,17 +1,66 @@
-.d-flex.align-items-center.mt-4.mb-4
-  .ml-auto.boards__linkBox
-    = link_to '一覧', recipes_path, class: 'btn btn-outline-dark'
-    = link_to '編集', edit_recipe_path(@recipe), class: 'btn btn-outline-dark'
+- provide(:title, @recipe.title)
+.container
+  .d-flex.align-items-center.mt-4.mb-4
+    .ml-auto.boards__linkBox
+      = link_to '一覧', recipes_path, class: 'btn btn-outline-dark'
+      = link_to '編集', edit_recipe_path(@recipe), class: 'btn btn-outline-dark'
+      - if @recipe.user == current_user
+        = link_to '削除', @recipe, method: :delete, class: 'btn btn-outline-dark', data: { confirm: '投稿を削除しますか？' }
 
-= render @recipe
 
-.comment__list
-  .comment__listTitle
-    h3
-      |コメント
-    #comments_area
-      = render partial: 'comments/index', locals: { comments: @comments }
+  .container
+    .row
+      .col-sm-10.col-md-8.col-lg-10.mx-auto
+        .recipe-page
+          .page-title
+            h1
+              = @recipe.title
+          .recipe-header
+            .recipe_title_image
+              - if @recipe.picture.present?
+                = image_tag @recipe.picture.to_s,size:'400x280', class: 'mypage-article-img'
 
-    - if user_signed_in?
-      .comment_form
-        = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }
+            div(class="likes-#{@recipe.id} like")
+              = render partial: 'likes/like', locals: { recipe: @recipe}
+
+            .recipe-header-item
+              - @recipe.tags.each do |tag|
+                .tag_icon.badge.badge-primary
+                  =tag.name
+          .recipe-body
+            h1
+             | 材料
+            .recipe-materials.col-sm-12.col-md-10.col-lg-12.mx-auto
+              - @recipe.materials.each do |material|
+                table.material-table
+                  td.material-list.material-name = material.name
+                  td.material-list.material-quantity = material.quantity
+
+          .recipe-body
+            h1
+              | 作り方（#{@recipe.count}人分）
+            .recipe-procedures.clearfix
+              - @recipe.procedures.each.with_index(1) do |procedure, i|
+                .procedure
+                  .index_box
+                    span
+                      = i
+                  - if procedure.image.present?
+                     .recipe-procedure-image
+                      = image_tag procedure.image.to_s,size:'250x140'
+                  - else
+                    .no-image
+                  .recipe-procedure-content
+                        = simple_format(procedure.content)
+
+
+          .comment__list
+            .comment__listTitle
+              h3
+                |コメント
+              #comments_area
+                = render partial: 'comments/index', locals: { comments: @comments }
+
+              - if user_signed_in?
+                .comment_form
+                  = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }

@@ -1,0 +1,12 @@
+.row
+  - @likes.each do |like|
+    .card.col-md-4
+      .card-body
+        .recipe_title_image
+          - if like.recipe.picture.present?
+            = link_to image_tag(like.recipe.picture.to_s,size: '300x250'), like.recipe
+          div(class="likes-#{like.recipe.id} like")
+            = render partial: 'likes/like', locals: { recipe: like.recipe}
+        p.card-text
+          = link_to like.recipe.title, like.recipe, style: "color:black;"
+= paginate @likes

@@ -218,5 +218,55 @@
 tr {
   width: 600px;
 }
-
 //materialformここまで
+
+//materialshowここから
+
+
+.material-list {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.material-name{
+  width: 640px;
+  padding: 8px 0px 8px 20px;
+}
+.material-quantity {
+  width: 255px;
+  text-align: center;
+}
+
+.recipe-materials {
+  border: 1px solid #ffa13d;
+  border-radius:10px;
+  background-color :#fffcf5;
+}
+
+//materialshowここまで
+
+//indexのsearch部分ここから
+
+.recipe-search {
+  height: 150px;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius:10px;
+  background-color :#fffcf5;
+  margin-bottom: 20px;
+
+}
+
+.recipe-search-title {
+  margin-bottom: 20px;
+}
+
+.tag_search {
+  float: left;
+  margin-right: 80px;
+  margin-bottom: 10px;
+}
+
+.tag_search_form {
+  margin-left: 20px;
+}

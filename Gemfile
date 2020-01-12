@@ -43,13 +43,10 @@ gem 'carrierwave'
 gem 'fog'
 gem 'rmagick'
 gem 'dotenv-rails'
-gem 'mini_magick'
-gem 'ckeditor', '4.3.0'
-
-gem 'nested_form_fields'
 gem "cocoon"
 gem 'simple_form'
-
+gem 'faker'
+gem 'acts_as_votable'
 
 
 group :development, :test do

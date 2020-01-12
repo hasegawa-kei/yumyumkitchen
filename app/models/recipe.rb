@@ -26,9 +26,10 @@ class Recipe < ApplicationRecord
 
   belongs_to :user
 
-  validates :title, presence: true, length: { maximum: 20 }
+  validates :title, presence: true, length: { maximum: 40 }
   validates :body, presence: true, length: { maximum: 1000 }
   validates :picture, presence: true
+  validates :count, presence: true
   validates :user_id, presence: true
   validates :materials, presence: true
   validates :procedures, presence: true
@@ -38,6 +39,13 @@ class Recipe < ApplicationRecord
     Like.find_by(recipe_id: recipe.id, user_id: user.id)
   end
 
+  def self.search(search)
+      if search
+        Recipe.where(['title LIKE ?', "%#{search}%"])
+      else
+        Recipe.all
+      end
+  end
 
 
 
