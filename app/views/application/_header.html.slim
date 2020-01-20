@@ -1,31 +1,32 @@
-nav.navbar.navbar-expand-sm.navbar-light[style="background-color: #ffe359;"]
-  button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation"]
-    span.navbar-toggler-icon
-  a.navbar-brand[href="/"]
+.fixed-top
+  nav.navbar.navbar-expand-sm.navbar-light[style="background-color: #ffe359;"]
+    button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    a.navbar-brand[href="/"]
 
-  .collapse.navbar-collapse.justify-content-end
-      ul.navbar-nav
-        - if user_signed_in?
+    .collapse.navbar-collapse.justify-content-end
+        ul.navbar-nav
+          - if user_signed_in?
 
-          li.nav-item
-           = link_to 'マイページ', user_path(current_user), class: 'nav-link'
+            li.nav-item
+             = link_to 'マイページ', user_path(current_user), class: 'nav-link'
 
-          li.nav-item
-            = link_to 'レシピを投稿する', new_recipe_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'レシピを投稿する', new_recipe_path, class: 'nav-link'
 
-          li.nav-item
-            = link_to 'レシピ一覧', recipes_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'レシピ一覧', recipes_path, class: 'nav-link'
 
-          li.nav-item
-            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
-        - else
+            li.nav-item
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
+          - else
 
-          li.nav-item
-            = link_to 'ログイン', new_user_session_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'ログイン', new_user_session_path, class: 'nav-link'
 
-          li.nav-item
-            = link_to 'レシピ一覧', recipes_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'レシピ一覧', recipes_path, class: 'nav-link'
 
 
-          li.nav-item
-            = link_to '新規登録', new_user_registration_path, class: 'nav-link'
+            li.nav-item
+              = link_to '新規登録', new_user_registration_path, class: 'nav-link'

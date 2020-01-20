@@ -1,14 +1,18 @@
 - if user_signed_in?
   - if current_user.already_liked?(recipe)
     = link_to recipe_like_path(recipe, recipe.find_like(recipe, current_user)), method: :delete, remote: true do
-      i.fas.fa-heart.red_heart
-      = recipe.likes.count
+      button.btn.btn-noiine[type="button"]
+        | いいね
+        i.far.fa-thumbs-up.fa-fw.fa-lg.faa-tada.animated
+        = recipe.likes.count
   - else
     = link_to recipe_likes_path(recipe), method: :post, remote: true do
-      | いいね
-      = recipe.likes.count
+      button.btn.outline.btn-noiine[type="button"]
+        | いいね
+        i.far.fa-thumbs-up.fa-fw.fa-lg.faa-tada.animated
+        = recipe.likes.count
 - else
-    p
-      span
-        | お気に入り数:
-      =recipe.likes.count
+    button.btn.btn-noiine[type="button"]
+      | いいね
+      i.far.fa-thumbs-up.fa-fw.fa-lg.faa-taday.animated
+      = recipe.likes.count

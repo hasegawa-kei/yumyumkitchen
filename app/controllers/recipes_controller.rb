@@ -25,7 +25,8 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = params[:tag_id].present? ? Tag.find(params[:tag_id]).recipes : Recipe.all
-    @recipes = @recipes.page(params[:page]).per(PER).search(params[:search])
+    @search = Recipe.ransack(params[:q])
+    @recipes = @search.result.page(params[:page]).per(PER)
 
     @like = Like.new
     @like_count = Like.where(recipe_id: params[:recipe_id]).count

@@ -22,7 +22,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import "comments";
-
+@import "likes";
+@import "users";
 
 // エディターの幅調整
 
@@ -61,3 +62,18 @@ img {
     clear: both;
     height: 0;
     }
+
+//アラートのmargin補正
+.no-gutters {
+  margin:0;
+}
+
+.no-gutters　> .alert,{
+	margin: 0;
+}
+//アラートのmargin補正ここまで
+
+//ヘッダー固定による補正
+body {
+  padding-top: 66px;
+}

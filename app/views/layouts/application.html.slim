@@ -11,7 +11,7 @@ html
 
     = render 'header'
     - if notice
-      .alert.alert-info.alert-dismissible[role="alert"]
+      .alert.alert-info.alert-dismissible.no-gutters[role="alert"]
         button.close[type="button" data-dismiss="alert"]
           span[aria-hidden="true"]
           | ×
@@ -19,7 +19,7 @@ html
           | close
         = notice
     - if alert
-      .alert.alert-danger.alert-dismissible[role="alert"]
+      .alert.alert-danger.alert-dismissibleno-gutters[role="alert"]
         button.close[type="button" data-dismiss="alert"]
           span[aria-hidden="true"]
           | ×

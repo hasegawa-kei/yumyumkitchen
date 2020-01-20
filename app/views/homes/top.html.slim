@@ -13,10 +13,15 @@
           |　SNSでおすすめのレシピを共有することができます。
       p.home-text
         	|　さあ、「おいしい」を探しに行きましょう！
-    - if !user_signed_in?
-      p
-        | ログインはこちら👇
-      = link_to 'ログインする！', new_user_session_path
-      p
-        | 登録されていない方はこちら👇
-      = link_to 'ヤムヤムキッチンをはじめる！', new_user_registration_path
+      - if !user_signed_in?
+        .sign-in-messages
+          .well
+            .login-btn
+              p
+                | ログインはこちら⤵︎
+              = link_to 'ログインする！', new_user_session_path, class:"btn btn-success btn-block"
+
+            .sign-up-btn
+              p
+                | 登録がまだの方はこちら⤵︎
+              = link_to 'ヤムヤムキッチンをはじめる！', new_user_registration_path, class:"btn btn-info btn-block"

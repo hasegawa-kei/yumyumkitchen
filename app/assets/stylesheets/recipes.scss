@@ -56,7 +56,11 @@
 }
 
 .recipe_title_image {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  margin-top: 5px;
 }
 
 #img_field {
@@ -247,7 +251,6 @@ tr {
 //indexのsearch部分ここから
 
 .recipe-search {
-  height: 150px;
   width: 100%;
   padding: 15px;
   border: 1px solid black;
@@ -263,7 +266,6 @@ tr {
 
 .tag_search {
   float: left;
-  margin-right: 80px;
   margin-bottom: 10px;
 }
 

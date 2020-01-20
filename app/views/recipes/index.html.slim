@@ -4,21 +4,31 @@
     h1
       | みんなの料理
 
+
   .recipe-search
     h4.recipe-search-title
      |　レシピを探す
-    .tag_search
-      |　◆タグで絞り込む
-      .tag_search_form
-        = form_tag recipes_path, method: :get, class: 'recipes__searchForm' do
-          = select_tag :tag_id,
-            options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
-            { prompt: '選択して下さい', class: 'form-control recipes__select', onchange: 'submit(this.form);'}
-    .freeword_search
-      |　◆フリーワードで探す
-      = form_tag(recipes_path, method: 'get') do
-          = text_field_tag :search
-          = submit_tag '検索する', name: nil
+    .row
+      .col-sm-4.tag_search
+        |　◆タグで絞り込む
+        .tag_search_form
+          = form_tag recipes_path, method: :get, class: 'recipes__searchForm' do
+            = select_tag :tag_id,
+              options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+              { prompt: '選択して下さい', class: 'form-control recipes__select', onchange: 'submit(this.form);'}
+      .col-sm-4.freeword_search
+        |　◆レシピ名で探す
+        = search_form_for @search do |f|
+            = f.search_field :title_cont
+            .active
+              = f.submit "検索"
+
+      .col-sm-4.freeword_search
+        |　◆材料で探す
+        = search_form_for @search do |f|
+            = f.search_field :materials_name_cont
+            .active
+              = f.submit "検索"
 
   .row
     - @recipes.each do |recipe|
@@ -27,8 +37,8 @@
           .recipe_title_image
             - if recipe.picture.present?
               = link_to image_tag(recipe.picture.to_s,size: '300x250'), recipe
-            div(class="likes-#{recipe.id} like")
-              = render partial: 'likes/like', locals: { recipe: recipe}
+          div(class="likes-#{recipe.id} like")
+            = render partial: 'likes/like', locals: { recipe: recipe}
           p.card-text
             = link_to recipe.title, recipe, style: "color:black;"
 
