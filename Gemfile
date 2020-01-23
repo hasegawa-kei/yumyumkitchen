@@ -54,6 +54,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rails-flog', require: 'flog'
   gem 'rspec-rails', '~> 3.9'
+  gem "factory_bot_rails", "~> 4.10.0"
+  gem 'spring-commands-rspec'
 end
 
 group :development do

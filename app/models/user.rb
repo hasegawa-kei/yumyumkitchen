@@ -28,6 +28,8 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :recipe
   has_many :comments, dependent: :destroy
 
+  validates :name, presence: true
+
   def already_liked?(recipe)
     self.likes.exists?(recipe_id: recipe.id)
   end
