@@ -3,8 +3,9 @@ FactoryBot.define do
     title "テストレシピ"
     body "テストの本文"
     picture {File.open("#{Rails.root}/app/assets/images/test.png")}
-    count 1
-    association :owner
+    serving 1
+    association :user
+
 
     after(:build) do |recipe|
       recipe.materials<< build(:material, recipe: recipe)
@@ -16,8 +17,8 @@ FactoryBot.define do
     title "テストレシピ"
     body "テストの本文"
     picture {File.open("#{Rails.root}/app/assets/images/test.png")}
-    count 1
-    association :owner
+    serving 1
+    association :user
 
     after(:build) do |recipe|
       recipe.procedures<< build(:procedure, recipe: recipe)
@@ -28,8 +29,8 @@ FactoryBot.define do
     title "テストレシピ"
     body "テストの本文"
     picture {File.open("#{Rails.root}/app/assets/images/test.png")}
-    count 1
-    association :owner
+    serving 1
+    association :user
 
     after(:build) do |recipe|
       recipe.materials<< build(:material, recipe: recipe)

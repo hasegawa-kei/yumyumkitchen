@@ -54,7 +54,6 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-
     redirect_to recipes_path, flash: { notice: "「#{@recipe.title}」が削除されました。"}
   end
 
@@ -62,7 +61,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :picture, :count, :body, tag_ids: [],
+    params.require(:recipe).permit(:title, :picture, :serving, :body, tag_ids: [],
         procedures_attributes: [:id, :recipe_id, :image, :image_cache, :content, :_destroy],
         materials_attributes: [:id, :recipe_id, :name, :quantity, :_destroy]
       )

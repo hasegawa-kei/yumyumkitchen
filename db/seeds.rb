@@ -41,7 +41,7 @@
     user_id: 1,
     body: "まさにコツいらず。
             焼き過ぎると固くなるので、この時間でいけば今のところハズレ無く焼けてます。",
-    count: 2,
+    serving: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/鯖の塩焼き/1.jpg"),
     materials_attributes: [
       {
@@ -77,7 +77,7 @@
     user_id: 1,
     body: "白菜がトロトロになるまでしっかり煮込み、
             水溶き片栗粉をくわえる事。",
-    count: 4,
+    serving: 4,
     picture: open("#{Rails.root}/app/assets/images/recipes/白菜とえのき/1.jpg"),
     materials_attributes: [
       {
@@ -185,7 +185,7 @@
     title: "レンジ蒸し鶏とキャベツの梅ごま和え",
     user_id: 1,
     body: "しょうゆはお好みで加減をしてください（^人^）",
-    count: 2,
+    serving: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/レンジ蒸し鶏とキャベツの梅ごま和え/1.jpg"),
     materials_attributes: [
       {
@@ -241,7 +241,7 @@
     title: "フライパンで！アジの塩焼き",
     user_id: 1,
     body: "火加減に注意！！",
-    count: 2,
+    serving: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/フライパンで！アジの塩焼き/1.jpg"),
     materials_attributes: [
       {
@@ -284,7 +284,7 @@
     user_id: 1,
     body: "火の通し方の調整は、肉の表面に肉汁が染み出てから、どれくらい焼くで調整してください。
           焼き始めからの時間よりも調整しやすいです。",
-    count: 2,
+    serving: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/牛ステーキの焼き方/1.jpg"),
     materials_attributes: [
       {
@@ -343,7 +343,7 @@
     user_id: 1,
     body: "豚肉の油はしっかり洗い流すとサッパリするので沢山食べれちゃいます。
           青ネギは出来るだけ細い幅で切った方がネギが主張してこないのでおすすめです☆＾＾",
-    count: 3,
+    serving: 3,
     picture: open("#{Rails.root}/app/assets/images/recipes/豚肉の大根おろし/1.jpg"),
     materials_attributes: [
       {
@@ -409,7 +409,7 @@
   Recipe.create!({
     title: "お子様向けのお味♫ウチのジャージャー麺",
     user_id: 2,
-    body: "大人の方向けに作るなら、
+    serving: "大人の方向けに作るなら、
           豆板醤を小さじ２位に増やし、砂糖を大さじ１減らすと、美味しく召し上がれるかと思います。",
     count: 4,
     picture: open("#{Rails.root}/app/assets/images/recipes/ジャージャー麺/1.jpg"),
@@ -515,7 +515,7 @@
     user_id: 2,
     body: "温かいご飯の方が炒めやすいと思います。
             レタスには火を通し過ぎないようにするのがおすすめです。",
-    count: 1,
+    serving: 1,
     picture: open("#{Rails.root}/app/assets/images/recipes/レタスチャーハン/1.jpg"),
     materials_attributes: [
       {
@@ -569,7 +569,7 @@
   Recipe.create!({
     title: "ツナマヨとゆで卵のおつまみ餃子★トースターで簡単",
     user_id: 3,
-    body: "イタリアンハーブソルトがなければ、塩・こしょうで下味をつけてもOKです。
+    serving: "イタリアンハーブソルトがなければ、塩・こしょうで下味をつけてもOKです。
             この場合は胡椒を多めに振るのがオススメです。",
     count: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/おつまみ餃子/1.jpg"),
@@ -611,7 +611,7 @@
   Recipe.create!({
     title: "トースターでおつまみ！ちょい辛厚揚げのマヨチーズ",
     user_id: 3,
-    body: "温かいご飯の方が炒めやすいと思います。
+    serving: "温かいご飯の方が炒めやすいと思います。
             レタスには火を通し過ぎないようにするのがおすすめです。",
     count: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/厚揚げのマヨチーズ/1.jpg"),
@@ -667,7 +667,7 @@
     user_id: 4,
     body: "●味噌を2度にわけて入れるのが、おいしさのポイントです。煮込む時に味噌を入れるのは材料に下味をつけ、仕上げにもう一度入れるのは味噌の風味を補うためです。
           ●野菜は残り野菜で何でもOKです。かぼちゃやさつま芋を入れてもおいしいですよ♫",
-    count: 6,
+    serving: 6,
     picture: open("#{Rails.root}/app/assets/images/recipes/豚汁/1.jpg"),
     materials_attributes: [
       {

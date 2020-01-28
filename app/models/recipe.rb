@@ -24,12 +24,12 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :procedures, allow_destroy: true
   accepts_nested_attributes_for :materials, allow_destroy: true
 
-  belongs_to :owner, class_name: 'User', foreign_key: :user_id
+  belongs_to :user
 
   validates :title, presence: true, length: { maximum: 40 }
   validates :body, presence: true, length: { maximum: 1000 }
   validates :picture, presence: true
-  validates :count, presence: true
+  validates :serving, presence: true
   validates :user_id, presence: true
   validates :materials, presence: true
   validates :procedures, presence: true

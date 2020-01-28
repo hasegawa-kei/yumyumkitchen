@@ -40,10 +40,10 @@ RSpec.describe Recipe, type: :model do
       end
 
       it "何人前がなければ無効な状態であること"do
-        recipe = FactoryBot.build(:recipe,count: nil)
+        recipe = FactoryBot.build(:recipe,serving: nil)
         recipe.valid?
 
-        expect(recipe.errors[:count]).to include("を入力してください")
+        expect(recipe.errors[:serving]).to include("を入力してください")
       end
     end
 

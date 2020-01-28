@@ -4,7 +4,7 @@
   .page-title
     h1
      | 料理名
-    = f.text_field :title, class: 'form-control', placeholder: "料理名を入れよう！"
+    = f.text_field :title, class: 'form-control recipe_title', placeholder: "料理名を入れよう！"
 
   .form-group.recipe-body
     h1
@@ -16,12 +16,13 @@
       - else
         i.fas.fa-image
         i.fas.fa-file-upload.add
-    = f.file_field :picture, class: "image", style: "display:none;", id: "file"
+
+    = f.file_field :picture, class: "image recipe_picture", id: "file", style: "display:none;"
 
     .form
       h1
         | 材料
-      = f.number_field :count, placeholder: "何人分"
+      = f.number_field :serving, placeholder: "何人分",class: "recipe_serving"
       table
         thead
           tr
@@ -47,7 +48,7 @@
       .col-md-12
         h1
          | コツやポイント
-        = f.text_area :body, class: 'form-control', placeholder: "作るときのコツやポイントをかこう！"
+        = f.text_area :body, class: 'form-control recipe_body', placeholder: "作るときのコツやポイントをかこう！"
 
 
   .form-group
@@ -60,4 +61,4 @@
           = tag.text
 
 
-  = f.submit '保存', class: 'btn btn-primary'
+  = f.submit 'レシピの保存', class: 'btn btn-primary'

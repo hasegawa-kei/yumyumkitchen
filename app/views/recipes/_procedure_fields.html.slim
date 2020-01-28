@@ -8,7 +8,7 @@
         img class="img_prev" src="" alt="Image preview"
       = f.hidden_field :image_cache, value: f.object.image_cache
     .procedures-text
-      = f.text_area :content, class: "form-control", rows: 5, placeholder: text_placeholder
+      = f.text_area :content, class: "form-control procedure_content", rows: 5, placeholder: text_placeholder
     .procedures-remove
       = link_to_remove_association "削除", f, class: "btn btn-light"
 

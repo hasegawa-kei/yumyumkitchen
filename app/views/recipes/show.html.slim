@@ -38,7 +38,7 @@
 
           .recipe-body
             h1
-              | 作り方（#{@recipe.count}人分）
+              | 作り方（#{@recipe.serving}人分）
             .recipe-procedures.clearfix
               - @recipe.procedures.each.with_index(1) do |procedure, i|
                 .procedure
