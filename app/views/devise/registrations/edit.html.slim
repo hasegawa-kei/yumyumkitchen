@@ -11,7 +11,7 @@
         - if @user.avatar.present?
           p
             | 現在のプロフィール画像
-          = image_tag(@user.avatar.thumb.to_s)
+          = image_tag(@user.avatar.to_s,size: '300x250')
 
         .div
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|

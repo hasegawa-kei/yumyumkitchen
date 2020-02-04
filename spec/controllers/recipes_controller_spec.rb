@@ -1,14 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe RecipesController, type: :controller do
+  include_context "recipe setup"
   describe "#new" do
     context "認証済みユーザーとして" do
-      before do
-        @user = FactoryBot.create(:user)
-      end
-
       it "正常にレスポンスを返すこと" do
-        sign_in @user
+        sign_in user
         get :new
         expect(response).to be_success
       end
@@ -35,13 +32,8 @@ RSpec.describe RecipesController, type: :controller do
   end
 
   describe "#show" do
-    before do
-      @user = FactoryBot.create(:user)
-      @recipe = FactoryBot.create(:recipe, user: @user)
-    end
-
     it "ログインしていなくてもアクセス許可" do
-      get :show, params: { id: @recipe.id }
+      get :show, params: { id: recipe.id }
       expect(response).to be_success
     end
   end

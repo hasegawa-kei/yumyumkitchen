@@ -57,6 +57,8 @@ group :development, :test do
   gem "factory_bot_rails", "~> 4.10.0"
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
+  gem 'rspec-retry'
+
 end
 
 group :development do
@@ -72,7 +74,14 @@ group :development do
 end
 
 group :test do
-  gem 'capybara','2.17'
+  gem 'capybara'
+  gem 'webdrivers'
+  gem 'launchy'
+  gem 'selenium-webdriver', require: false
+  gem 'shoulda-matchers',
+    git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+    branch: 'rails-5'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

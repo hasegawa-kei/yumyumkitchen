@@ -12,19 +12,19 @@
             = render "devise/shared/error_messages", resource: resource
             .form-group
               = f.text_field :name, autofocus: true, autocomplete: "name",
-                            class: 'form-control', placeholder: '名前'
+                            class: 'form-control new_user_name', placeholder: '名前'
 
             .form-group
               = f.email_field :email, autofocus: true, autocomplete: "email",
-                            class: 'form-control', placeholder: 'メールアドレス'
+                            class: 'form-control new_user_email', placeholder: 'メールアドレス'
 
             .form-group
               = f.password_field :password, autocomplete: "new-password",
-                            class: 'form-control', placeholder: 'パスワード（６字以上）'
+                            class: 'form-control new_user_password', placeholder: 'パスワード（６字以上）'
 
             .form-group
               = f.password_field :password_confirmation, autocomplete: "new-password",
-                            class: 'form-control', placeholder: 'パスワード（確認）'
+                            class: 'form-control new_user_password_confirmation', placeholder: 'パスワード（確認）'
 
             .actions
               = f.submit "登録する", class: 'btn btn-lg btn-primary btn-block'

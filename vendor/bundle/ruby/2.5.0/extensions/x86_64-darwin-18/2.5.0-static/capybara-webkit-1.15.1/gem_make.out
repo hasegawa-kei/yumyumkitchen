@@ -1,0 +1,21 @@
+current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/capybara-webkit-1.15.1
+/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200204-33942-7c2lhq.rb extconf.rb
+Info: creating stash file /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/capybara-webkit-1.15.1/.qmake.stash
+cd src/ && ( test -e Makefile.webkit_server || /usr/local/bin/qmake -o Makefile.webkit_server /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/capybara-webkit-1.15.1/src/webkit_server.pro ) && /Library/Developer/CommandLineTools/usr/bin/make -f Makefile.webkit_server 
+Project ERROR: No QtWebKit installation found. QtWebKit is no longer included with Qt 5.6, so you may need to install it separately.
+make: *** [sub-src-webkit_server-pro-make_first-ordered] Error 3
+Command 'make  --jobs=4' failed
+
+current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/capybara-webkit-1.15.1
+make "DESTDIR=" clean
+cd src/ && ( test -e Makefile.webkit_server || /usr/local/bin/qmake -o Makefile.webkit_server /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/capybara-webkit-1.15.1/src/webkit_server.pro ) && /Library/Developer/CommandLineTools/usr/bin/make -f Makefile.webkit_server clean
+Project ERROR: No QtWebKit installation found. QtWebKit is no longer included with Qt 5.6, so you may need to install it separately.
+make: *** [sub-src-webkit_server-pro-clean-ordered] Error 3
+
+current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/capybara-webkit-1.15.1
+make "DESTDIR="
+cd src/ && ( test -e Makefile.webkit_server || /usr/local/bin/qmake -o Makefile.webkit_server /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/capybara-webkit-1.15.1/src/webkit_server.pro ) && /Library/Developer/CommandLineTools/usr/bin/make -f Makefile.webkit_server 
+Project ERROR: No QtWebKit installation found. QtWebKit is no longer included with Qt 5.6, so you may need to install it separately.
+make: *** [sub-src-webkit_server-pro-make_first-ordered] Error 3
+
+make failed, exit code 2

@@ -16,19 +16,19 @@
             = select_tag :tag_id,
               options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
               { prompt: '選択して下さい', class: 'form-control recipes__select', onchange: 'submit(this.form);'}
-      .col-sm-4.freeword_search
+      .col-sm-4.freeword_name_search
         |　◆レシピ名で探す
         = search_form_for @search do |f|
-            = f.search_field :title_cont
+            = f.search_field :title_cont, class: "recipe-name-serch"
             .active
-              = f.submit "検索"
+              = f.submit "料理名で検索", class: "aaa"
 
-      .col-sm-4.freeword_search
+      .col-sm-4.freeword_material_search
         |　◆材料で探す
         = search_form_for @search do |f|
-            = f.search_field :materials_name_cont
+            = f.search_field :materials_name_cont, class: "recipe-material-serch"
             .active
-              = f.submit "検索"
+              = f.submit "材料で検索"
 
   .row
     - @recipes.each do |recipe|
