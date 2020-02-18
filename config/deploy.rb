@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.12.0"
 
-set :application, "my_app_name"
-set :repo_url, "https://github.com/hasegawa-kei/yumyumkitchen"
+set :application, "yumyumkitchen"
+set :repo_url, 'git@github.com:hasegawa-kei/yumyumkitchen.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

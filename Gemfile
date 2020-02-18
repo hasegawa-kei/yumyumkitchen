@@ -41,7 +41,6 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'carrierwave'
 gem 'fog'
-gem 'rmagick'
 gem 'dotenv-rails'
 gem "cocoon"
 gem 'simple_form'
