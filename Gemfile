@@ -47,6 +47,7 @@ gem "cocoon"
 gem 'simple_form'
 gem 'faker'
 gem 'ransack'
+gem 'mini_racer'
 
 
 group :development, :test do
@@ -58,6 +59,10 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
   gem 'rspec-retry'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 
 end
 
@@ -81,7 +86,7 @@ group :test do
   gem 'shoulda-matchers',
     git: 'https://github.com/thoughtbot/shoulda-matchers.git',
     branch: 'rails-5'
-  
+
 end
 
 group :production, :staging do
