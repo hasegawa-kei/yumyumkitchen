@@ -36,7 +36,7 @@ gem 'bootstrap', '4.1.3'
 gem 'kaminari'
 
 
-gem 'font-awesome-sass', '~> 5.4.1'
+gem "font-awesome-sass", "< 5.0.13"
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'carrierwave'
