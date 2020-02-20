@@ -9,7 +9,7 @@ gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
-gem 'sassc-rails', '2.1.2'
+gem 'sassc-rails', '2.1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -47,6 +47,7 @@ gem 'simple_form'
 gem 'faker'
 gem 'ransack'
 gem 'mini_racer'
+gem 'sassc', '~> 2.1.0' 
 
 
 group :development, :test do
