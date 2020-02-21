@@ -17,7 +17,9 @@ test:
 
 production:
     <<: *default
-    database: yumyumkitchen_production
-    username: root
-    password:
-    socket: /var/lib/mysql/mysql.sock
+    encoding: utf8
+    reconnect: false
+    host: <%= Rails.application.credentials.db[:host] %>
+    database: <%= Rails.application.credentials.db[:database] %>
+    username: <%= Rails.application.credentials.db[:username] %>
+    password: <%= Rails.application.credentials.db[:password] %>
