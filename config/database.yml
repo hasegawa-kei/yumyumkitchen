@@ -16,8 +16,10 @@ test:
   database: yumyumkitchen_test
 
 production:
-    <<: *default
-    database: <%= ENV['DB_NAME'] %>
-    username: <%= ENV['DB_USERNAME'] %>
-    password: <%= ENV['DB_PASSWORD'] %>
-    host: <%= ENV['DB_HOSTNAME'] %>
+  <<: *default
+  encoding: utf8
+  reconnect: false
+  host: <%= Rails.application.credentials.db[:host] %>
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
