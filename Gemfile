@@ -47,7 +47,7 @@ gem 'simple_form'
 gem 'faker'
 gem 'ransack'
 gem 'mini_racer'
-gem 'sassc', '~> 2.1.0' 
+gem 'sassc', '~> 2.1.0'
 
 
 group :development, :test do
@@ -59,10 +59,15 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
   gem 'rspec-retry'
-  gem 'capistrano'
+  gem 'capistrano', "~> 3.10", require: false
   gem 'capistrano-bundler'
-  gem 'capistrano-rails'
+  gem 'capistrano-rails', "~> 1.4", require: false
+  gem 'capistrano-rails-console'
   gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-vars'
+  gem 'capistrano-sidekiq'
+  gem 'capistrano3-puma'
+  gem 'capistrano-ssh-doctor', git: 'https://github.com/capistrano-plugins/capistrano-ssh-doctor.git'
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
 
