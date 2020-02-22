@@ -67,6 +67,7 @@ group :development, :test do
   gem 'capistrano-rbenv-vars'
   gem 'capistrano-sidekiq'
   gem 'capistrano3-puma'
+  gem 'capistrano3-unicorn'
   gem 'capistrano-ssh-doctor', git: 'https://github.com/capistrano-plugins/capistrano-ssh-doctor.git'
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
