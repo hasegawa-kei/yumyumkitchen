@@ -72,6 +72,12 @@ set :branch, 'master'
          end
        end
      end
+     desc 'Restart application'
+      task :restart do
+        on roles(:app) do
+            invoke 'unicorn:restart'
+        end
+      end
    end
 
    after :publishing, :restart
