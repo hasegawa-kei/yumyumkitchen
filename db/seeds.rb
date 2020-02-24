@@ -409,9 +409,9 @@
   Recipe.create!({
     title: "お子様向けのお味♫ウチのジャージャー麺",
     user_id: 2,
-    serving: "大人の方向けに作るなら、
+    body: "大人の方向けに作るなら、
           豆板醤を小さじ２位に増やし、砂糖を大さじ１減らすと、美味しく召し上がれるかと思います。",
-    count: 4,
+    serving: 4,
     picture: open("#{Rails.root}/app/assets/images/recipes/ジャージャー麺/1.jpg"),
     materials_attributes: [
       {
@@ -569,9 +569,9 @@
   Recipe.create!({
     title: "ツナマヨとゆで卵のおつまみ餃子★トースターで簡単",
     user_id: 3,
-    serving: "イタリアンハーブソルトがなければ、塩・こしょうで下味をつけてもOKです。
+    body: "イタリアンハーブソルトがなければ、塩・こしょうで下味をつけてもOKです。
             この場合は胡椒を多めに振るのがオススメです。",
-    count: 2,
+    serving: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/おつまみ餃子/1.jpg"),
     materials_attributes: [
       {
@@ -611,9 +611,9 @@
   Recipe.create!({
     title: "トースターでおつまみ！ちょい辛厚揚げのマヨチーズ",
     user_id: 3,
-    serving: "温かいご飯の方が炒めやすいと思います。
+    body: "温かいご飯の方が炒めやすいと思います。
             レタスには火を通し過ぎないようにするのがおすすめです。",
-    count: 2,
+    serving: 2,
     picture: open("#{Rails.root}/app/assets/images/recipes/厚揚げのマヨチーズ/1.jpg"),
     materials_attributes: [
       {
