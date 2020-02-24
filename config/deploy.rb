@@ -65,7 +65,7 @@ set :branch, 'master'
 
    desc 'Run seed'
    task :seed do
-     on roles(:app) do
+     on roles(:db) do
        with rails_env: fetch(:rails_env) do
          within current_path do
            execute :bundle, :exec, :rake, 'db:seed'
