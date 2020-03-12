@@ -1,15 +1,19 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  reconnect: false
   pool: 5
-  username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
-  password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
-  socket: /tmp/mysql.sock
+  username: root
+  password: password
+  host: db #追加
+  #socket: /tmp/mysql.sock
 
 development:
   <<: *default
   database: yumyumkitchen_development
+  #username: root
+  #password: password
+  #database: docker_development
+  #host: db
 
 test:
   <<: *default
