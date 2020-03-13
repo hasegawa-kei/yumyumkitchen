@@ -49,6 +49,7 @@ gem 'ransack'
 gem 'sassc', '~> 2.1.0'
 gem 'simple_form'
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'bcrypt_pbkdf'
@@ -93,6 +94,7 @@ group :test do
       git: 'https://github.com/thoughtbot/shoulda-matchers.git',
       branch: 'rails-5'
   gem 'webdrivers'
+  gem 'rspec_junit_formatter'
 end
 
 group :production, :staging do
