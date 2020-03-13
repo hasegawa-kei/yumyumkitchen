@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class RecipesController < ApplicationController
   before_action :set_target_recipe, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
   PER = 9
-
 
   def new
     @recipe = Recipe.new
@@ -20,7 +21,6 @@ class RecipesController < ApplicationController
       flash[:error_messages] = @recipe.errors.full_messages
       render 'new'
     end
-
   end
 
   def index
@@ -38,8 +38,7 @@ class RecipesController < ApplicationController
     @like = Like.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @recipe.update(recipe_params)
@@ -54,23 +53,18 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    redirect_to recipes_path, flash: { notice: "「#{@recipe.title}」が削除されました。"}
+    redirect_to recipes_path, flash: { notice: "「#{@recipe.title}」が削除されました。" }
   end
 
-
-
   private
+
   def recipe_params
     params.require(:recipe).permit(:title, :picture, :serving, :body, tag_ids: [],
-        procedures_attributes: [:id, :recipe_id, :image, :image_cache, :content, :_destroy],
-        materials_attributes: [:id, :recipe_id, :name, :quantity, :_destroy]
-      )
+                                                                      procedures_attributes: %i[id recipe_id image image_cache content _destroy],
+                                                                      materials_attributes: %i[id recipe_id name quantity _destroy])
   end
 
   def set_target_recipe
     @recipe = Recipe.find(params[:id])
   end
-
-
-
 end

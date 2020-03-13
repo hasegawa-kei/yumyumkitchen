@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateRecipeTagRelations < ActiveRecord::Migration[5.2]
   def change
     create_table :recipe_tag_relations do |t|

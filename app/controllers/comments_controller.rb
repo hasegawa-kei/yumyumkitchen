@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -7,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html {redirect_to @recipe, notice: "コメントを投稿しました！"}
+        format.html { redirect_to @recipe, notice: 'コメントを投稿しました！' }
         format.js
       end
     end
@@ -15,15 +17,12 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.destroy
-      render :create
-    end
+    render :create if @comment.destroy
   end
 
   private
 
-    def comment_params
-      params.require(:comment).permit(:content, :recipe_id, :user_id)
-    end
-
+  def comment_params
+    params.require(:comment).permit(:content, :recipe_id, :user_id)
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -31,8 +33,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def already_liked?(recipe)
-    self.likes.exists?(recipe_id: recipe.id)
+    likes.exists?(recipe_id: recipe.id)
   end
-
-
 end

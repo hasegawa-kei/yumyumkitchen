@@ -1,7 +1,9 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.12.0"
+# frozen_string_literal: true
 
-set :application, "yumyumkitchen"
+# config valid for current version and patch releases of Capistrano
+lock '~> 3.12.0'
+
+set :application, 'yumyumkitchen'
 set :repo_url, 'git@github.com:hasegawa-kei/yumyumkitchen.git'
 
 # Default branch is :master
@@ -9,13 +11,13 @@ set :repo_url, 'git@github.com:hasegawa-kei/yumyumkitchen.git'
 set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
- set :deploy_to, "/var/www/yumyumkitchen"
+set :deploy_to, '/var/www/yumyumkitchen'
 
- # シンボリックリンクをはるファイル。
- set :linked_files, fetch(:linked_files, []).push('config/master.key')
+# シンボリックリンクをはるファイル。
+set :linked_files, fetch(:linked_files, []).push('config/master.key')
 
- # シンボリックリンクをはるフォルダ。
- set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+# シンボリックリンクをはるフォルダ。
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -39,48 +41,48 @@ set :branch, 'master'
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
- set :keep_releases, 5
+set :keep_releases, 5
 
- set :rbenv_ruby, '2.5.1'
+set :rbenv_ruby, '2.5.1'
 
- #出力するログのレベル。
- set :log_level, :debug
+# 出力するログのレベル。
+set :log_level, :debug
 
- namespace :deploy do
-   desc 'Restart application'
-   task :restart do
-     invoke 'unicorn:restart'
-   end
+namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    invoke 'unicorn:restart'
+  end
 
-   desc 'Create database'
-   task :db_create do
-     on roles(:db) do |host|
-       with rails_env: fetch(:rails_env) do
-         within current_path do
-           execute :bundle, :exec, :rake, 'db:create'
-         end
-       end
-     end
-   end
+  desc 'Create database'
+  task :db_create do
+    on roles(:db) do |_host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:create'
+        end
+      end
+    end
+  end
 
-   desc 'Run seed'
-   task :seed do
-     on roles(:db) do
-       with rails_env: fetch(:rails_env) do
-         within current_path do
-           execute :bundle, :exec, :rake, 'db:seed'
-         end
-       end
-     end
-   end
+  desc 'Run seed'
+  task :seed do
+    on roles(:db) do
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
+  end
 
-   after :publishing, :restart
+  after :publishing, :restart
 
-   after :restart, :clear_cache do
-     on roles(:web), in: :groups, limit: 3, wait: 10 do
-     end
-   end
- end
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
+  end
+end
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure

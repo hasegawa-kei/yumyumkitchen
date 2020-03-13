@@ -1,5 +1,6 @@
-module RecipesHelper
+# frozen_string_literal: true
 
+module RecipesHelper
   def text_placeholder
     <<-"EOS".strip_heredoc
       ここに手順を書いてね♪ (200文字まで)

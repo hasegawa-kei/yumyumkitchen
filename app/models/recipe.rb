@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: recipes
@@ -34,19 +36,15 @@ class Recipe < ApplicationRecord
   validates :materials, presence: true
   validates :procedures, presence: true
 
-
   def find_like(recipe, user)
     Like.find_by(recipe_id: recipe.id, user_id: user.id)
   end
 
   def self.search(search)
-      if search
-        Recipe.where(['title LIKE ?', "%#{search}%"])
-      else
-        Recipe.all
-      end
+    if search
+      Recipe.where(['title LIKE ?', "%#{search}%"])
+    else
+      Recipe.all
+    end
   end
-
-
-
 end
