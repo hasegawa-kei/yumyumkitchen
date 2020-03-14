@@ -73,7 +73,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rspec-retry'
   gem 'spring-commands-rspec'
-  gem 'rubocop'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails'
 end
 
 group :development do
