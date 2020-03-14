@@ -529,6 +529,9 @@ GEM
       rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-rails (2.4.2)
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
@@ -662,7 +665,7 @@ DEPENDENCIES
   kaminari
   launchy
   listen (~> 3.0.5)
-  mysql2
+  mysql2 (>= 0.4.4, < 0.6.0)
   pry-byebug
   puma (~> 3.0)
   rails (= 5.2.3)
@@ -674,6 +677,7 @@ DEPENDENCIES
   rspec-retry
   rspec_junit_formatter
   rubocop
+  rubocop-rails
   sassc (~> 2.1.0)
   sassc-rails (= 2.1.0)
   selenium-webdriver
@@ -691,7 +695,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.6.0p0
 
 BUNDLED WITH
    1.17.3
