@@ -85,7 +85,6 @@ group :development do
 
   gem 'annotate'
   gem 'html2slim'
-  #gem 'rubocop'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
   
