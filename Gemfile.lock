@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/capistrano-plugins/capistrano-ssh-doctor.git
-  revision: 0e5de7c1c4d987c16adeaea296f0e863b9cbec6f
-  specs:
-    capistrano-ssh-doctor (1.0.0)
-      capistrano (>= 3.1)
-
-GIT
   remote: https://github.com/thoughtbot/shoulda-matchers.git
   revision: 4b160bd19ecca7f97d7ac22dccd5fde9b0da5a9f
   branch: rails-5
@@ -102,6 +95,8 @@ GEM
     capistrano-sidekiq (1.0.3)
       capistrano (>= 3.9.0)
       sidekiq (>= 3.4, < 6.0)
+    capistrano-ssh-doctor (1.0.0)
+      capistrano (>= 3.1)
     capistrano3-puma (3.1.1)
       capistrano (~> 3.7)
       capistrano-bundler
@@ -649,7 +644,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-rbenv-vars
   capistrano-sidekiq
-  capistrano-ssh-doctor!
+  capistrano-ssh-doctor
   capistrano3-puma
   capistrano3-unicorn
   capybara
