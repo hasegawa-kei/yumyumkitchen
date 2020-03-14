@@ -87,7 +87,6 @@ group :development do
   gem 'html2slim'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
-  
 end
 
 group :test do
