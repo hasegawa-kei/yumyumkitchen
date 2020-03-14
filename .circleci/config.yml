@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-        - image: circleci/ruby:2.6.0-node-browsers
+        - image: circleci/ruby:2.5.1-node-browsers
           environment:
             RAILS_ENV: 'test'
 
@@ -17,8 +17,8 @@ jobs:
         - checkout
         - restore_cache: 
             keys: 
-                - v2-dependencies-{{ checksum "Gemfile.lock" }}
-                - v2-dependencies-
+                - v1-dependencies-{{ checksum "Gemfile.lock" }}
+                - v1-dependencies-
 
         - run:
             name: install dependencies
@@ -28,7 +28,7 @@ jobs:
         - save_cache:
             paths:
                 - ./vendor/bundle
-            key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+            key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
         - run: mv config/database.yml.ci config/database.yml 
 
