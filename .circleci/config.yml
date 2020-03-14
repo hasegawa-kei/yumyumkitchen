@@ -3,13 +3,13 @@ jobs:
   build:
     docker:
         - image: circleci/ruby:2.5.1-node-browsers
-            #environment:
-                #RAILS_ENV: 'test'
+          environment:
+            RAILS_ENV: 'test'
 
         - image: circleci/mysql:5.7
-            #environment:
-                #MYSQL_ALLOW_EMPTY_PASSWORD: true
-                #MYSQL_ROOT_HOST: %
+          environment:
+                MYSQL_ALLOW_EMPTY_PASSWORD: true
+                MYSQL_ROOT_HOST: '%'
                 
     working_directory: ~/repo
 
