@@ -54,6 +54,7 @@ gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'bcrypt_pbkdf'
   gem 'byebug', platform: :mri
   gem 'capistrano', '~> 3.10', require: false
   gem 'capistrano-bundler'
@@ -61,12 +62,11 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'capistrano-rbenv'
   gem 'capistrano-rbenv-vars'
-  gem 'capistrano-sidekiq'
-  gem 'capistrano-ssh-doctor', git: 'https://github.com/capistrano-plugins/capistrano-ssh-doctor.git'
+  #gem 'capistrano-sidekiq'
+  #gem 'capistrano-ssh-doctor', git: 'https://github.com/capistrano-plugins/capistrano-ssh-doctor.git'
   gem 'capistrano3-puma'
   gem 'capistrano3-unicorn'
   gem 'ed25519'
-  gem 'bcrypt_pbkdf'
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'pry-byebug'
   gem 'rails-flog', require: 'flog'
