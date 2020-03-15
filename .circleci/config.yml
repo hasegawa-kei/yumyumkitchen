@@ -39,7 +39,7 @@ jobs:
         
         - run:
             name: Run Rubocop
-            command: bundle exec rubocop
+            command: rubocop
     
         - run:
             name: run tests
