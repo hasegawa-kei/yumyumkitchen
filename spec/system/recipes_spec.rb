@@ -10,7 +10,7 @@ RSpec.feature 'Recipes', type: :system do
     expect do
       click_link 'レシピを投稿する'
       find('.recipe_title').set('テストタイトル')
-      attach_file 'recipe[picture]', "#{Rails.root}/tmp/test.png", visible: false
+      attach_file 'recipe[picture]', "#{Rails.root}/app/assets/logo.png", visible: false
       find('.recipe_serving').set(2)
       find('.material_name').set('肉')
       find('.material_quantity').set('100g')

@@ -24,7 +24,7 @@ RSpec.feature 'Users', type: :feature do
     visit root_path
     click_link 'マイページ'
     click_link '編集する'
-    attach_file 'user_avatar', "#{Rails.root}/tmp/test.png"
+    attach_file 'user_avatar', "#{Rails.root}/app/assets/logo.png"
     fill_in 'user_current_password', with: 'hogehogehoge1'
     click_button '更新'
     expect(page).to have_content 'アカウント情報を変更しました。'
