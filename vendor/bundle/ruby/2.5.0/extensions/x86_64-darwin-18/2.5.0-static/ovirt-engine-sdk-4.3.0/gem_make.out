@@ -1,5 +1,5 @@
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
-/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200315-99271-1uejbaq.rb extconf.rb
+/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200316-86437-pbs98y.rb extconf.rb
 checking for xml2-config... yes
 checking for curl-config... yes
 creating Makefile
@@ -33,4 +33,4 @@ linking shared-object ovirtsdk4c.bundle
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/ovirt-engine-sdk-4.3.0/ext/ovirtsdk4c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ovirtsdk4c.bundle ./.gem.20200315-99271-5ynr1d
+/usr/bin/install -c -m 0755 ovirtsdk4c.bundle ./.gem.20200316-86437-1v96pp9

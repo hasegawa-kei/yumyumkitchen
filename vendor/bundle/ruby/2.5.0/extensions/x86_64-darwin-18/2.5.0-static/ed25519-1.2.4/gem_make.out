@@ -1,5 +1,5 @@
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/ed25519-1.2.4/ext/ed25519_ref10
-/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200315-99271-oey0za.rb extconf.rb
+/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200316-86437-1dz8ocu.rb extconf.rb
 creating Makefile
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/ed25519-1.2.4/ext/ed25519_ref10
@@ -21,4 +21,4 @@ linking shared-object ed25519_ref10.bundle
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/ed25519-1.2.4/ext/ed25519_ref10
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ed25519_ref10.bundle ./.gem.20200315-99271-dtszx4
+/usr/bin/install -c -m 0755 ed25519_ref10.bundle ./.gem.20200316-86437-c9jpa4

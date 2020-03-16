@@ -1,5 +1,5 @@
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.3/ext/mysql2
-/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200315-99271-1tmcisx.rb extconf.rb --with-ldflags=-L/usr/local/opt/openssl@1.1/lib
+/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200316-86437-1rjjqu6.rb extconf.rb --with-ldflags=-L/usr/local/opt/openssl@1.1/lib
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_wait_for_single_fd()... yes
@@ -41,4 +41,4 @@ linking shared-object mysql2/mysql2.bundle
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/mysql2-0.5.3/ext/mysql2
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20200315-99271-6hhpf1/mysql2
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20200316-86437-pp4hbi/mysql2

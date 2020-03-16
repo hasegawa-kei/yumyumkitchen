@@ -1,5 +1,5 @@
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/json-2.3.0/ext/json
-/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200315-99271-14gft52.rb extconf.rb
+/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200316-86437-igt8br.rb extconf.rb
 creating Makefile
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/json-2.3.0/ext/json

@@ -1,5 +1,5 @@
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/unicorn-5.4.1/ext/unicorn_http
-/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200315-99271-ujh2ad.rb extconf.rb
+/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200316-86437-16px7zq.rb extconf.rb
 checking for SIZEOF_OFF_T in ruby.h... yes
 checking for SIZEOF_SIZE_T in ruby.h... yes
 checking for SIZEOF_LONG in ruby.h... yes
@@ -19,4 +19,4 @@ linking shared-object unicorn_http.bundle
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/unicorn-5.4.1/ext/unicorn_http
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 unicorn_http.bundle ./.gem.20200315-99271-134o2az
+/usr/bin/install -c -m 0755 unicorn_http.bundle ./.gem.20200316-86437-14y4mkf

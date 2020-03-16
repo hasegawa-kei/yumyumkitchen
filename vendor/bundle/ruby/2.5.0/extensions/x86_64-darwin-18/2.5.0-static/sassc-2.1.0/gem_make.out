@@ -1,5 +1,5 @@
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/sassc-2.1.0/ext
-/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200315-99271-1xsz07d.rb extconf.rb
+/Users/hasegawakei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200316-86437-14s1k7z.rb extconf.rb
 creating Makefile
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/sassc-2.1.0/ext
@@ -72,4 +72,4 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/hasegawakei/yumyumkitchen/vendor/bundle/ruby/2.5.0/gems/sassc-2.1.0/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20200315-99271-1e7uew0/sassc
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20200316-86437-xduyis/sassc
