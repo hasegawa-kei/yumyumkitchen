@@ -93,9 +93,9 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'selenium-webdriver', require: false
-  #gem 'shoulda-matchers',
-      #git: 'https://github.com/thoughtbot/shoulda-matchers.git',
-      #branch: 'rails-5'
+  gem 'shoulda-matchers',
+      git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+      branch: 'rails-5'
   gem 'webdrivers'
   gem 'rspec_junit_formatter'
 end

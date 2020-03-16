@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.12.0'
+lock '3.12.1'
 
 set :application, 'yumyumkitchen'
 set :repo_url, 'git@github.com:hasegawa-kei/yumyumkitchen.git'
