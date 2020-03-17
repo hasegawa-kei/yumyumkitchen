@@ -29,7 +29,7 @@
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-server '54.168.136.255', user: 'hasegawa', roles: %w[app db web]
+server '54.168.136.255', user: 'ec2-user', roles: %w[app db web]
 
 set :ssh_options, keys: '~/.ssh/my-key.pem_rsa'
 # Custom SSH Options
