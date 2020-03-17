@@ -31,12 +31,7 @@
 
 server '54.168.136.255', user: 'hasegawa', roles: %w[app db web]
 
-set :ssh_options, {
-    user: 'hasegawa',
-    keys: '~/.ssh/my-key.pem',
-    forward_agent: true,
-    auth_methods: %w[publickey]
-}
+set :ssh_options, keys: '~/.ssh/my-key.pem'
 # Custom SSH Options
 # ==================
 
