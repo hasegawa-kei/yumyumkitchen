@@ -63,7 +63,6 @@ jobs:
             fingerprints:
                 - "9a:97:a7:c6:95:a4:d2:07:f3:82:d4:97:29:69:ee:60"
         
-                
         - deploy:
             name: Capistrano deploy
             command: |
