@@ -34,6 +34,7 @@ server '54.168.136.255', user: 'hasegawa', roles: %w[app db web]
 set :ssh_options, keys: '~/.ssh/my-key.pem_rsa'
 # Custom SSH Options
 # ==================
+
 # You may pass any option but keep in mind that net/ssh understands a
 # limited set of options, consult the Net::SSH documentation.
 # http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start
