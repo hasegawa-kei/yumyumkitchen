@@ -32,7 +32,7 @@
 server '54.168.136.255', user: 'hasegawa', roles: %w[app db web]
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: '~/.ssh/my-key.pem_rsa'
+                  keys: '~/.ssh/my-key.pem'
 # Custom SSH Options
 # ==================
 
