@@ -9,16 +9,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Tag.create([
-  { name: '主食（肉）' },
-  { name: '主食（魚）' },
-  { name: '主食（野菜）' },
-  { name: '副菜' },
-  { name: '汁もの' },
+  { name: 'お肉のおかず' },
+  { name: '魚介のおかず' },
+  { name: '野菜のおかず' },
+  { name: 'サラダ' },
+  { name: 'スープ、汁物' },
   { name: '洋食' },
-  { name: '和食' },
-  { name: '中華' },
-  { name: 'おつまみ' },
-  { name: 'その他' }
+  { name: 'お菓子' },
+  { name: 'パン' },
+  { name: '中華料理' },
+  { name: 'おつまみ' }
 ])
 
 user = User.new(

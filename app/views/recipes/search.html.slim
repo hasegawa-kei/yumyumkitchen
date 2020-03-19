@@ -1,0 +1,24 @@
+- provide(:title, "フリーワードで探す")
+.container
+  .d-flex.align-items-center
+    h1
+      | ◉フリーワードで料理を探す
+
+  .recipe-search
+    .row
+      .col-sm-4.freeword_name_search
+        |　◆レシピ名で探す
+        = search_form_for @search, url: search_path do |f|
+            = f.search_field :title_cont, class: "recipe-name-serch"
+            .active
+              = f.submit "料理名で検索", class: "aaa"
+
+      .col-sm-4.freeword_material_search
+        |　◆材料で探す
+        = search_form_for @search, url: search_path do |f|
+            = f.search_field :materials_name_cont, class: "recipe-material-serch"
+            .active
+              = f.submit "材料で検索"
+
+  = render partial: 'recipes_lists', locals: { recipe: @recipe }
+  

@@ -2,7 +2,7 @@
 
 class RecipesController < ApplicationController
   before_action :set_target_recipe, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[index show search]
   PER = 9
 
   def new
@@ -25,6 +25,13 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = params[:tag_id].present? ? Tag.find(params[:tag_id]).recipes : Recipe.all
+    @recipes = @recipes.page(params[:page]).per(PER)
+
+    @like = Like.new
+    @like_count = Like.where(recipe_id: params[:recipe_id]).count
+  end
+
+  def search
     @search = Recipe.ransack(params[:q])
     @recipes = @search.result.page(params[:page]).per(PER)
 
