@@ -77,3 +77,36 @@ img {
 body {
   padding-top: 66px;
 }
+
+//フッダー
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 180px;
+}
+.footer {
+  position: absolute;
+
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 120px;
+  background-color: #f4eaba;
+}
+
+.footer_container {
+  height: 120px;
+  text-align: center;
+}
+
+
+.footer-main_text {
+  padding-top: 30px;
+  font-size: 30px;
+}
+
+.footer-copy {
+  Copyright © YumYumkitchen Inc. All rights reserved
+}
