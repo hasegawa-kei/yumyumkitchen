@@ -2,9 +2,9 @@
 
 module RecipesHelper
   def text_placeholder
-    <<-"EOS".strip_heredoc
+    <<-TEXT.strip_heredoc
       ここに手順を書いてね♪ (200文字まで)
       手順を追加したい時は、下の「追加」ボタンをクリック！
-    EOS
+    TEXT
   end
 end

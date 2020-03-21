@@ -35,8 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rails-i18n' # 日本語対応
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bootstrap', '4.1.3'
 gem 'autoprefixer-rails', '~> 7.1.6'
+gem 'bootstrap', '4.1.3'
+
 gem 'kaminari'
 
 gem 'carrierwave'
@@ -47,14 +48,12 @@ gem 'dotenv-rails'
 gem 'faker'
 gem 'fog'
 gem 'font-awesome-sass', '< 5.0.13'
-#gem 'mini_racer'
+# gem 'mini_racer'
 gem 'ransack'
 gem 'sassc', '~> 2.1.0'
 gem 'simple_form'
 
-
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   gem 'byebug', platform: :mri
   gem 'capistrano', '~> 3.10', require: false
@@ -81,24 +80,22 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'web-console'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-
   gem 'annotate'
-  gem 'html2slim'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec_junit_formatter'
   gem 'selenium-webdriver', require: false
   gem 'shoulda-matchers',
       git: 'https://github.com/thoughtbot/shoulda-matchers.git',
       branch: 'rails-5'
   gem 'webdrivers'
-  gem 'rspec_junit_formatter'
 end
 
 group :production, :staging do

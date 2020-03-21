@@ -5,7 +5,7 @@
     a.navbar-brand[href="/"]
 
     .collapse.navbar-collapse.justify-content-end
-        ul.navbar-nav
+        ul.navbar-nav.header_search_dropmenu
           - if user_signed_in?
 
             li.nav-item
@@ -14,11 +14,14 @@
             li.nav-item
               = link_to 'レシピを投稿する', new_recipe_path, class: 'nav-link'
 
-            li.nav-item
-              = link_to 'カテゴリで探す', recipes_path, class: 'nav-link'
-
-            li.nav-item
-              = link_to 'フリーワードで探す', search_path, class: 'nav-link'
+            li.nav-item.nav-link
+              | レシピを探す
+              ul
+                li
+                  = link_to 'カテゴリで探す', recipes_path, class: 'nav-link'
+                li
+                  = link_to 'フリーワードで探す', search_path, class: 'nav-link'
+            
 
             li.nav-item
               = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
@@ -27,11 +30,13 @@
             li.nav-item
               = link_to 'ログイン', new_user_session_path, class: 'nav-link'
 
-            li.nav-item
-              = link_to 'カテゴリで探す', recipes_path, class: 'nav-link'
-
-            li.nav-item
-              = link_to 'フリーワードで探す', search_path, class: 'nav-link'
+            li.nav-item.nav-link
+              | レシピを探す
+              ul
+                li
+                  = link_to 'カテゴリで探す', recipes_path, class: 'nav-link'
+                li
+                  = link_to 'フリーワードで探す', search_path, class: 'nav-link'
 
             li.nav-item
               = link_to '新規登録', new_user_registration_path, class: 'nav-link'

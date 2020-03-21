@@ -99,6 +99,7 @@ body {
 .footer_container {
   height: 120px;
   text-align: center;
+  color: #7e7c7c;
 }
 
 
@@ -107,5 +108,53 @@ body {
   font-size: 30px;
 }
 
-.footer-copy {
+//ヘッダー
+ul.header_search_dropmenu {
+  list-style: none;
+  display: table;
+  table-layout: fixed;
+}
+ul.header_search_dropmenu > li {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  //border: 1px solid #f8f8f8;
+  //background: #f8f8f8; /* 背景色*/
+}
+ul.header-dropmenu li a {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+ul.header_search_dropmenu li ul {
+  visibility: hidden;
+  width: 100%;
+  list-style: none;
+  position: absolute;
+  top: 130%;
+  left: -1px;
+  margin: 0;
+  padding: 0;
+}
+ul.header_search_dropmenu li:hover ul {
+  visibility: visible;
+  
+}
+ul.header_search_dropmenu li ul li {
+  background: #edde6a;
+  transition: all .2s ease;
+  
+}
+ul.header_search_dropmenu > li:hover {
+  bottom: -1px;
+  opacity: 1;
+  visibility: visible;
+  text-decoration: underline;
+}
+ul.header_search_dropmenu li:hover ul li:hover {
+  background: #ffe359;
+  text-decoration: underline;
 }
