@@ -1,6 +1,7 @@
 # YumYumKitchen
 ![yumyumkitchenトップページ](https://user-images.githubusercontent.com/55547500/77252259-056ac900-6c96-11ea-8222-36c9a67fb4d4.png)
-####　どんなアプリ？
+
+##　どんなアプリ？
 クックパッドなどのようなレシピを投稿したり、共有したりするアプリです
 
 ## URL
