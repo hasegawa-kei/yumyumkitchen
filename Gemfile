@@ -36,7 +36,7 @@ gem 'rails-i18n' # 日本語対応
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'autoprefixer-rails', '~> 7.1.6'
-gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 gem 'bootstrap', '4.1.3'
 
 gem 'kaminari'
