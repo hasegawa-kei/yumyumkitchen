@@ -36,6 +36,7 @@ gem 'rails-i18n' # 日本語対応
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'autoprefixer-rails', '~> 7.1.6'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'bootstrap', '4.1.3'
 
 gem 'kaminari'
@@ -52,7 +53,7 @@ gem 'font-awesome-sass', '< 5.0.13'
 gem 'ransack'
 gem 'sassc', '~> 2.1.0'
 gem 'simple_form'
-gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
 
 group :development, :test do
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
