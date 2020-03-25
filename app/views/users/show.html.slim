@@ -9,19 +9,27 @@
     - if current_user && current_user.id == @user.id
       .user-edit-link
         = link_to '編集する', edit_user_registration_path
+    
+    | <div id="user-
+    = @user.id
+    | " class="collection-item">
+    = render 'users/follow', user: @user
+  - if current_user && current_user.id == @user.id
+    = link_to "フォローした人", {controller: :users,action: :follow_list,user_id: @user.id}, method: :get
 
 
-  .user-activities
-    ul#myTabs.nav.nav-tabs
-      li.active[role="presentation"]
-        a.nav-link.active[href="#posted_recipes" aria-controls="posted_recipes" role="tab" data-toggle="tab" class="nav-link active"]
-          | 投稿した料理
+.user-activities
+  ul#myTabs.nav.nav-tabs
+    li.active[role="presentation"]
+      a.nav-link.active[href="#posted_recipes" aria-controls="posted_recipes" role="tab" data-toggle="tab" class="nav-link active"]
+        | 投稿した料理
+    - if current_user && current_user.id == @user.id    
       li[role="presentation"]
         a.nav-link[href="#liked_recipes" aria-controls="liked_recipes" role="tab" data-toggle="tab" class="nav-link"]
           | いいねをした料理
-    .tab-content.p-2
-      #posted_recipes.tab-pane.active.fade.show[role="tabpanel"]
-        = render partial: 'users/posted_recipes'
-      #liked_recipes.tab-pane.fade[role="tabpanel"]
-        = render partial: 'users/liked_recipes'
-      #message.tab-pane.fade[role="tabpanel"]
+  .tab-content.p-2
+    #posted_recipes.tab-pane.active.fade.show[role="tabpanel"]
+      = render partial: 'users/posted_recipes'
+    #liked_recipes.tab-pane.fade[role="tabpanel"]
+      = render partial: 'users/liked_recipes'
+    #message.tab-pane.fade[role="tabpanel"]

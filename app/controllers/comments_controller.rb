@@ -7,17 +7,12 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.build(comment_params)
     @comment.user_id = current_user.id
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @recipe, notice: 'コメントを投稿しました！' }
-        format.js
-      end
-    end
+    render :comment if @comment.save
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    render :create if @comment.destroy
+    render :comment if @comment.destroy
   end
 
   private

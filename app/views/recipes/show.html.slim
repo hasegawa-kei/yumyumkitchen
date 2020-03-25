@@ -1,24 +1,16 @@
 - provide(:title, @recipe.title)
+
 .container
-  .d-flex.align-items-center.mt-4.mb-4
-    .ml-auto.boards__linkBox
-      = link_to '一覧', recipes_path, class: 'btn btn-outline-dark'
-      = link_to '編集', edit_recipe_path(@recipe), class: 'btn btn-outline-dark'
-      - if @recipe.user == current_user
-        = link_to '削除', @recipe, method: :delete, class: 'btn btn-outline-dark', data: { confirm: '投稿を削除しますか？' }
-
-
-  .container
-    .row
-      .col-sm-10.col-md-8.col-lg-10.mx-auto
-        .recipe-page
-          .page-title
-            h1
-              = @recipe.title
-          .recipe-header
-            .recipe_title_image
-              - if @recipe.picture.present?
-                = image_tag @recipe.picture.to_s,size:'400x280', class: 'mypage-article-img'
+  .row
+    .col-sm-10.col-md-8.col-lg-10.mx-auto
+      .recipe-page
+        .page-title
+          h1
+            = @recipe.title
+        .recipe-header
+          .recipe_title_image
+            - if @recipe.picture.present?
+              = image_tag @recipe.picture.to_s,size:'400x280', class: 'mypage-article-img'
 
             div(class="likes-#{@recipe.id} like")
               = render partial: 'likes/like', locals: { recipe: @recipe}
@@ -27,9 +19,20 @@
               - @recipe.tags.each do |tag|
                 .tag_icon.badge.badge-primary
                   =tag.name
+
+      .d-flex.align-items-center
+        .recipe.div
+          .recipe_user
+            = link_to "#{@recipe.user.name}さん", @recipe.user
+          .recipe_edit_btn
+            - if @recipe.user == current_user
+              = link_to '編集', edit_recipe_path(@recipe), class: 'btn btn-outline-dark'
+              = link_to '削除', @recipe, method: :delete, class: 'btn btn-outline-dark', data: { confirm: '投稿を削除しますか？' }
+          
+          
           .recipe-body
             h1
-             | 材料
+              | 材料
             .recipe-materials.col-sm-12.col-md-10.col-lg-12.mx-auto
               - @recipe.materials.each do |material|
                 table.material-table
@@ -46,13 +49,12 @@
                     span
                       = i
                   - if procedure.image.present?
-                     .recipe-procedure-image
+                      .recipe-procedure-image
                       = image_tag procedure.image.to_s,size:'250x140'
                   - else
                     .no-image
                   .recipe-procedure-content
                         = simple_format(procedure.content)
-
 
           .comment__list
             .comment__listTitle
@@ -64,3 +66,12 @@
               - if user_signed_in?
                 .comment_form
                   = render partial: 'comments/form', locals: { comment: @comment, recipe: @recipe }
+          .sns__share
+            h5
+              | シェアはこちら！
+            #sosyal
+              = link_to 'Twitter', "https://twitter.com/share?url=#{request.url}&text=タイトル", class: 'twitter', title: 'Twitter', target: '_blank'
+              = link_to 'Facebook', "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=タイトル", class: 'facebook', title: 'Facebook', target: '_blank'
+            #sosyal
+              = link_to 'LINE', "http://line.me/R/msg/text/?#{request.url}&text=タイトル", class: 'line', title: 'LINE', target: '_blank'
+              = link_to 'Slack', "http://slackbutton.herokuapp.com/post/new/?url=#{request.url}&text=タイトル", class: 'slack', title: 'Slack', target: '_blank'

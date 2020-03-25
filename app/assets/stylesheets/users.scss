@@ -4,3 +4,17 @@
 .user-page {
   padding-top: 10px;
 }
+
+.follow_list_title{
+margin-top: 20px;
+}
+
+.follow_users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: aute;
+    padding: 20px 0;
+    border-bottom: 1px solid #bfbfbf;
+  }
+}

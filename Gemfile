@@ -52,6 +52,7 @@ gem 'font-awesome-sass', '< 5.0.13'
 gem 'ransack'
 gem 'sassc', '~> 2.1.0'
 gem 'simple_form'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 group :development, :test do
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'

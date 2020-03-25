@@ -8,7 +8,14 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  resources :users, only: %i[show]
+  resources :users, only: %i[show] do
+    member do
+      put 'follow',            to: 'users#follow'
+      put 'unfollow',          to: 'users#unfollow'
+      get 'follow_list',       to: 'users#follow_list'
+      get 'follower_list',     to: 'users#follower_list'
+    end
+  end
   # get 'mypage', to: 'users#show'
   # post 'login', to: 'sessions#create'
   # delete 'logout', to: 'sessions#destroy'
@@ -20,7 +27,7 @@ Rails.application.routes.draw do
   # get '/login',    to: 'sessions#new'
   # post '/login',   to: 'sessions#create'
   resources :recipes do
-    resources :comments
+    resources :comments, only: %i[create destroy]
     resources :likes, only: %i[create destroy]
   end
   # resources :users, only: %i[new create]

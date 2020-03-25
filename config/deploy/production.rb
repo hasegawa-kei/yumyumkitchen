@@ -31,7 +31,7 @@
 
 server '54.168.136.255', user: 'hasegawa', roles: %w[app db web]
 
-set :ssh_options, keys: '~/.ssh/my-key.pem'
+set :ssh_options, keys: '~/.ssh/my-key.pem_rsa'
 # Custom SSH Options
 # ==================
 

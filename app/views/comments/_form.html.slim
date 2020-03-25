@@ -2,6 +2,6 @@
     .comment__formTitle
       p
         | コメントを残す
-      = form_with(model: [recipe, comment] ) do |f|
+      = simple_form_for [@recipe, @recipe.comments.build],remote: true do |f|
           = f.text_area :content, placeholder: "コメントを入力", id: "comment_field", class: 'form-control'
           = f.submit "コメントする！",class: 'btn btn-outline-warning comment-submit-btn'

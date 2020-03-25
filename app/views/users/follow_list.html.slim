@@ -1,0 +1,14 @@
+.container
+    .row
+        .col-sm-10.col-md-8.col-lg-10.mx-auto.text-center
+            .follow_list_title
+                h2
+                    | フォローした人
+            
+            ul.follow_users
+                - @user.all_following.each do |user|
+                    li
+                        .aaa
+                            -if user.avatar.present?
+                                = image_tag user.avatar.to_s,size: 50
+                            = link_to "#{user.name}さん", user_path(user)

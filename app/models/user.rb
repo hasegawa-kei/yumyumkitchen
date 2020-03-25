@@ -29,6 +29,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :recipe
   has_many :comments, dependent: :destroy
+  acts_as_followable
+  acts_as_follower
 
   validates :name, presence: true
 

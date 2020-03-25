@@ -1,0 +1,8 @@
+- if user.id != current_user.id
+  .collection-item
+    - unless current_user.following?(user)
+      .action
+        = link_to 'フォローする' ,follow_user_path(user.id), class: "btn btn-sm btn-primary  follow-link follow-link-delete" ,method: :put,remote: true
+    - else
+      .action
+        = link_to 'フォローを解除する' ,unfollow_user_path(user),class: "btn btn-sm btn-outline-primary follow-link follow-link-create", method: :put,remote: true

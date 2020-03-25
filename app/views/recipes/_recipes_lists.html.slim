@@ -1,13 +1,13 @@
 .row
-    - @recipes.each do |recipe|
-      .card.col-md-4
-        .card-body
-          .recipe_title_image
-            - if recipe.picture.present?
-              = link_to image_tag(recipe.picture.to_s,size: '300x250'), recipe
-          div(class="likes-#{recipe.id} like")
-            = render partial: 'likes/like', locals: { recipe: recipe}
-          p.card-text
-            = link_to recipe.title, recipe, style: "color:black;"
+  - @recipes.each do |recipe|
+    .card.col-md-4
+      .card-body
+        .recipe_title_image
+          - if recipe.picture.present?
+            = link_to image_tag(recipe.picture.to_s,size: '300x250'), recipe
+        div(class="likes-#{recipe.id} like")
+          = render partial: 'likes/like', locals: { recipe: recipe}
+        p.card-text
+          = link_to recipe.title, recipe, style: "color:black;"
 
 = paginate @recipes

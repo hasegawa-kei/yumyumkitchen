@@ -5,6 +5,18 @@
   display: inline-block;
 }
 
+.recipe-page {
+  height: 470px;
+}
+.recipe_user {
+  text-align: right;
+  //margin: 0 0 0 auto;
+  height: 20px;
+  margin-bottom: 5px;
+}
+.recipe_edit_btn{
+  height: 20px;
+}
 
 .recipes__select {
   display: inline-block;
