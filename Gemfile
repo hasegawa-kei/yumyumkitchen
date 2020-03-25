@@ -28,6 +28,7 @@ gem 'rails-ujs'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -36,7 +37,7 @@ gem 'rails-i18n' # 日本語対応
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'autoprefixer-rails', '~> 7.1.6'
-gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
+
 gem 'bootstrap', '4.1.3'
 
 gem 'kaminari'
