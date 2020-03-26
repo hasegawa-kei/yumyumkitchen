@@ -9,12 +9,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :users, only: %i[show] do
-    member do
-      put 'follow',            to: 'users#follow'
-      put 'unfollow',          to: 'users#unfollow'
-      get 'follow_list',       to: 'users#follow_list'
-      get 'follower_list',     to: 'users#follower_list'
-    end
+    # member do
+    #   put 'follow',            to: 'users#follow'
+    #   put 'unfollow',          to: 'users#unfollow'
+    #   get 'follow_list',       to: 'users#follow_list'
+    #   get 'follower_list',     to: 'users#follower_list'
+    # end
   end
   # get 'mypage', to: 'users#show'
   # post 'login', to: 'sessions#create'
