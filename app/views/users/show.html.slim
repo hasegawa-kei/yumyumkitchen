@@ -10,12 +10,12 @@
       .user-edit-link
         = link_to '編集する', edit_user_registration_path
     
-  /   | <div id="user-
-  /   = @user.id
-  /   | " class="collection-item">
-  /   = render 'users/follow', user: @user
-  / - if current_user && current_user.id == @user.id
-  /   = link_to "フォローした人", {controller: :users,action: :follow_list,user_id: @user.id}, method: :get
+    | <div id="user-
+    = @user.id
+    | " class="collection-item">
+    = render 'users/follow', user: @user
+  - if current_user && current_user.id == @user.id
+    = link_to "フォローした人", {controller: :users,action: :follow_list,user_id: @user.id}, method: :get
 
 
 .user-activities

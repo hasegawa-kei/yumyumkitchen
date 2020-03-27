@@ -6,7 +6,7 @@
                     | フォローした人
             
             ul.follow_users
-                - @user.all_following.each do |user|
+                - @user.following.each do |user|
                     li
                         .aaa
                             -if user.avatar.present?

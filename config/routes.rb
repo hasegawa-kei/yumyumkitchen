@@ -9,13 +9,18 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :users, only: %i[show] do
-    # member do
+     member do
+      get :following, :followers
+      get 'follow_list',       to: 'users#follow_list'
+     end
     #   put 'follow',            to: 'users#follow'
     #   put 'unfollow',          to: 'users#unfollow'
     #   get 'follow_list',       to: 'users#follow_list'
     #   get 'follower_list',     to: 'users#follower_list'
     # end
   end
+
+  resources :relationships,       only: [:create, :destroy]
   # get 'mypage', to: 'users#show'
   # post 'login', to: 'sessions#create'
   # delete 'logout', to: 'sessions#destroy'
