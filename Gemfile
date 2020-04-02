@@ -54,7 +54,6 @@ gem 'ransack'
 gem 'sassc', '~> 2.1.0'
 gem 'simple_form'
 
-
 group :development, :test do
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   gem 'byebug', platform: :mri
@@ -75,6 +74,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rspec-retry'
   gem 'spring-commands-rspec'
+  gem 'seed_dump'
 end
 
 group :development do

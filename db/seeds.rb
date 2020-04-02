@@ -29,12 +29,12 @@ user = User.new(
 user.save!
 
 20.times do |_n|
-  User.create!(
+  User.create!({
     name: Faker::Name.name,
     email: Faker::Internet.email,
     password: 'password',
     avatar: Faker::Avatar.image
-  )
+  })
 end
 
 Recipe.create!({
@@ -184,7 +184,7 @@ Recipe.create!({
 
 Recipe.create!({
   title: 'レンジ蒸し鶏とキャベツの梅ごま和え',
-  user_id: 1,
+  user_id: 4,
   body: 'しょうゆはお好みで加減をしてください（^人^）',
   serving: 2,
   picture: open("#{Rails.root}/app/assets/images/recipes/レンジ蒸し鶏とキャベツの梅ごま和え/1.jpg"),
@@ -240,7 +240,7 @@ Recipe.create!({
 
 Recipe.create!({
   title: 'フライパンで！アジの塩焼き',
-  user_id: 1,
+  user_id: 5,
   body: '火加減に注意！！',
   serving: 2,
   picture: open("#{Rails.root}/app/assets/images/recipes/フライパンで！アジの塩焼き/1.jpg"),
@@ -282,7 +282,7 @@ Recipe.create!({
 
 Recipe.create!({
   title: '失敗しない牛ステーキの焼き方。慌てないでじっくりと',
-  user_id: 1,
+  user_id: 5,
   body: "火の通し方の調整は、肉の表面に肉汁が染み出てから、どれくらい焼くで調整してください。
           焼き始めからの時間よりも調整しやすいです。",
   serving: 2,
@@ -341,7 +341,7 @@ Recipe.create!({
 
 Recipe.create!({
   title: 'いくらでも食べれる！豚肉のさっぱり大根おろしかけ',
-  user_id: 1,
+  user_id: 2,
   body: "豚肉の油はしっかり洗い流すとサッパリするので沢山食べれちゃいます。
           青ネギは出来るだけ細い幅で切った方がネギが主張してこないのでおすすめです☆＾＾",
   serving: 3,
@@ -791,5 +791,12 @@ end
   Like.create!(
     recipe_id: 6,
     user_id: i + 1
+  )
+end
+
+5.times do |i|
+  Relationship.create!(
+    follower_id: 1,
+    followed_id: 2 + i
   )
 end

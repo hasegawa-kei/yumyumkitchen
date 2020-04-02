@@ -43,7 +43,7 @@ class User < ApplicationRecord
   def already_liked?(recipe)
     likes.exists?(recipe_id: recipe.id)
   end
-  
+
   # ユーザーをフォローする
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
